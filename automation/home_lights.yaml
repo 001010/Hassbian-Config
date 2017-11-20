@@ -1,0 +1,66 @@
+  - alias: "Night TV Mode"
+    trigger:
+      - platform: state
+        entity_id: input_boolean.night_tv_mode
+        to: 'on'
+    action:
+      - service: light.turn_on
+        entity_id:
+        - light.livingroomdimmer_level
+        data:
+          brightness: 40
+      - service: light.turn_on
+        entity_id:
+        - light.kitchendimmer_level
+        - light.diningdimmer_level
+        data:
+          brightness: 255
+      - service: light.turn_off
+        entity_id:
+        - light.kitchendimmer_level
+        - light.diningdimmer_level
+
+
+# Living Room Roku with Lights
+  # - alias: "Roku: Undim on Idle"
+    # trigger:
+      # - platform: state
+        # entity_id: media_player.roku_4__yy009v221044
+        # to: 'idle'
+    # condition:
+      # - condition: state
+        # entity_id: input_boolean.night_tv_mode
+        # state: 'on'
+    # action:
+      # - service: light.turn_on
+        # entity_id:
+        # - light.livingroomdimmer_level
+        # - light.kitchendimmer_level
+        # data:
+          # brightness: 255
+          
+  # - alias: "Roku: Dim on Play"
+    # trigger:
+      # - platform: state
+        # entity_id: media_player.roku_4__yy009v221044
+        # to: 'playing'
+    # condition:
+      # - condition: state
+        # entity_id: input_boolean.night_tv_mode
+        # state: 'on'
+    # action:
+      # - service: light.turn_on
+        # entity_id:
+        # - light.livingroomdimmer_level
+        # data:
+          # brightness: 40
+      # - service: light.turn_on
+        # entity_id:
+        # - light.kitchendimmer_level
+        # - light.diningdimmer_level
+        # data:
+          # brightness: 255
+      # - service: light.turn_off
+        # entity_id:
+        # - light.kitchendimmer_level
+        # - light.diningdimmer_level

@@ -1,0 +1,58 @@
+  stairs_rgb_r:
+    name: Stairs_RGB_R
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
+  stairs_rgb_g:
+    name: Stairs_RGB_G
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
+  stairs_rgb_b:
+    name: Stairs_RGB_B
+    initial: 254
+    min: 0
+    max: 254
+    step: 1
+  bedroom_humidity:
+    name: Bedroom_Humidity
+    initial: 30
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: '%'
+  temperature_downstairs:
+    name: Downstairs_Temperature
+    initial: 70
+    min: 0
+    max: 125
+    step: 0.1
+    mode: box
+    unit_of_measurement: 'F'
+  temperature_upstairs:
+    name: Upstairs_Temperature
+    initial: 70
+    min: 0
+    max: 125
+    step: 0.1
+    mode: box
+    unit_of_measurement: 'F'
+  temperature_house:
+    name: House_Temperature
+    initial: 70
+    min: 0
+    max: 125
+    step: 0.1
+    mode: box
+    unit_of_measurement: 'F'
+  temperature_outside:
+    name: Outside_Temperature
+    initial: 70
+    min: 0
+    max: 125
+    step: 0.1
+    mode: box
+    unit_of_measurement: 'F'

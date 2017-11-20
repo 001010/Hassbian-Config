@@ -1,0 +1,283 @@
+## Groups
+  default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+    - group.Date_Time
+    - group.sun_center
+    - sensor.pws_temp_f
+    - sensor.pws_relative_humidity
+    - sensor.pws_weather
+    - sensor.pws_pressure_in
+    - group.people
+    - group.climate
+    - group.downstairs
+    - group.kitchen
+    - group.living_room
+    - group.master_bedroom
+    - group.office
+    - group.garage
+#    - group.zones
+    - updater.updater
+    - group.ssl_certificate
+    - group.scripts
+  Date_Time:
+    name: "Date & Time"
+    entities:
+    - sensor.date__time
+    - sensor.time_utc
+  Climate:
+    name: Climate
+    view: yes
+    icon: mdi:oil-temperature
+    entities:
+    - automation.cool_down_house_on
+    - script.update_all_temp_sheet
+    - input_number.temperature_downstairs
+    - input_number.temperature_upstairs
+    - input_number.temperature_house
+    - input_number.temperature_outside
+    - input_boolean.outside_warmer
+    - input_boolean.outside_cooler
+    - switch.windowfan_switch
+    - switch.housefan_switch
+    - climate.entryway
+    - history_graph.climate_graph
+  Network:
+    name: Network
+    view: yes
+    icon: mdi:lan-connect
+    entities:
+    - automation.ssl_renew
+    - group.speedtest
+    - group.ssl_certificate
+    - history_graph.comcast_speedtests
+  Downstairs:
+    name: Downstairs
+    view: yes
+    icon: mdi:numeric-1-box-outline
+    entities:
+    - group.entryway_sensor
+    - group.kitchen
+    - group.living_room
+    - group.entryway
+  Upstairs:
+    view: yes
+    icon: mdi:numeric-2-box
+    entities:
+    - group.upstairs_sensor
+    - group.master_bedroom
+  Upstairs Hall:
+    view: yes
+    icon: mdi:arrow-up-bold-box-outline
+    entities:
+    - group.upstairs_sensor
+    - switch.housefan_switch
+  Office:
+    name: Office
+    view: yes
+    icon: mdi:office
+    entities:
+    - light.rgbw_desk
+    - group.upstairs_sensor
+    - group.entryway_sensor
+    - group.front_porch_sensor
+    - sensor.tyler_to_home
+    - sensor.tyler_to_work
+    - sensor.kristine_to_home
+    - switch.windowfan_switch
+  Kitchen:
+    name: Kitchen
+    view: yes
+    icon: mdi:food-variant
+    entities:
+    - group.kitchen_lights
+    - group.water_sensor
+  Kitchen Lights:
+    entities:
+    - light.kitchendimmer_level
+    - light.diningdimmer_level
+  Front Porch Lights:
+    name: Front Porch Lights
+    view: no
+    entities:
+    - switch.frontporchlight_switch
+    - switch.outdoorswitch_switch
+  Front Porch:
+    name: Front Porch
+    view: yes
+    icon: mdi:pine-tree-box
+    entities:
+    - switch.frontporchlight_switch
+    - sensor.pws_temp_f
+    - sensor.pws_relative_humidity
+    - sensor.pws_weather
+    - sensor.pws_pressure_in
+    - group.front_porch_lights
+    - group.front_porch_sensor
+  Stairs:
+    name: Stairs
+    view: yes
+    icon: mdi:stairs
+    entities:
+    - group.stair_lights
+  Entryway:
+    name: Entryway
+    view: yes
+    icon: mdi:swap-horizontal
+    entities:
+    - climate.entryway
+    - group.entryway_sensor
+    - group.stair_lights
+  Living Room:
+    name: Living Room
+    view: yes
+    icon: mdi:theater
+    entities:
+    - light.lampdimmer_level
+    - light.livingroomdimmer_level
+    - media_player.plex_web_chrome
+    - media_player.roku_4__yy009v221044
+    - media_player.living_room
+  Master Bedroom:
+    name: Master Bedroom
+    view: yes
+    icon: mdi:human-male-female
+    entities:
+    - group.bedroom_sensor
+    - switch.outlet1_switch
+    - group.humidifier
+    - automation.bedroom_humidity_control_on
+    - automation.bedroom_humidity_control_off
+  Garage:
+    name: Garage
+    view: yes
+    icon: mdi:garage
+    entities: 
+    - cover.2car_garage_door_opener
+    #- cover.garage_door
+  People:
+    name: Humans
+    view: yes
+    icon: mdi:account-multiple
+    entities:
+    - group.tyler
+    - group.kristine
+  Routines:
+    view: yes
+    icon: mdi:code-tags-check
+    entities:
+      - automation.speed_test_update
+      - automation.turn_on_light_when_sun_sets
+      - automation.turn_off_light_when_sun_rises
+      - automation.turn_on_holiday_light_when_sunset
+      - automation.stairs_lights_on_night_motion
+      - automation.upstairs_motion_notification
+      - automation.humidity_leak_alarm
+      - automation.outside_warmer
+      - automation.outside_cooler
+      - automation.cool_down_house_on
+      - automation.cool_down_house_off
+  Scripts:
+    view: yes
+    icon: mdi:script
+    entities:
+    - script.update_all_temp_sheet
+    
+## Devices
+  Nest:
+    entities:
+    - sensor.entryway_thermostat_temperature
+    - sensor.entryway_thermostat_target
+    - sensor.entryway_thermostat_humidity
+    - sensor.entryway_thermostat_operation_mode
+    - sensor.entryway_thermostat_hvac_state
+  Upstairs Sensor:
+    entities:
+    - binary_sensor.multisensorb_sensor
+    - sensor.multisensorb_luminance
+    - sensor.multisensorb_relative_humidity
+    - sensor.multisensorb_temperature
+    - sensor.zwave_multisensorb_battery
+  Entryway Sensor:
+    entities:
+    - binary_sensor.multisensore_sensor
+    - sensor.multisensore_luminance
+    - sensor.multisensore_relative_humidity
+    - sensor.multisensore_temperature
+    - sensor.zwave_multisensore_battery
+  Front Porch Sensor:
+    entities:
+    - binary_sensor.multisensorf_sensor
+    - sensor.multisensorf_luminance
+    - sensor.multisensorf_relative_humidity
+    - sensor.multisensorf_temperature
+    - sensor.zwave_multisensorf_battery
+  Bedroom Sensor:
+    entities:
+    - input_number.bedroom_humidity
+    - binary_sensor.bedroomsensor_sensor
+    - sensor.bedroomsensor_temperature
+    - sensor.bedroomsensor_luminance
+    - sensor.bedroomsensor_relative_humidity
+    - sensor.bedroomsensor_ultraviolet
+    - sensor.bedroomsensor_burglar
+    - sensor.zwave_bedroomsensor_battery
+  Water Sensor:
+    entities:
+    - sensor.watersensor_flood
+    - sensor.zwave_watersensor_battery
+  Stair Lights:
+    icon: mdi:stairs
+    entities:
+    - light.rgbw_stairs
+  # Plant0:
+    # name: Plant
+    # entities:
+    # - sensor.Plant0_name
+    # - sensor.Plant0_status
+    # - sensor.Plant0_fuel
+    # - sensor.Plant0_moisture
+    # - sensor.Plant0_signal
+    # - sensor.Plant0_battery
+    # - sensor.plant0_next_water
+    # - sensor.Plant0_last_updated
+  Humidifer:
+    icon: mdi:water
+    entities:
+    - switch.humidifier_switch
+    - sensor.watersensor_flood
+  track_Tyler:
+    name: Tyler
+    entities:
+    - device_tracker.tyler_bt
+    - device_tracker.tyler_tyler
+  track_Kristine:
+    name: Kristine
+    entities:
+    - device_tracker.kristine_bt
+    - device_tracker.kristine_kristine
+    
+## Sun
+  Sun_Center:
+    name: Information Center
+    entities:
+    - sun.sun
+    - sun.next_rising
+    - sun.next_setting
+
+# System
+  SSL Certificate:
+    entities:
+    - sensor.ssl_expires
+  Speedtest:
+    name: Network Speed
+    entities:
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    
+  zones:
+    name: Zones
+    entities:
+      - binary_sensor.floorplan

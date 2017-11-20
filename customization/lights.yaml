@@ -1,0 +1,24 @@
+## Emulated Hue items:
+## Must use 'emulated_hue: true' on each item then restart the HA service. Reloading core config and groups will not make this work.
+
+# Lights
+  light.diningdimmer_level:
+    friendly_name: "Dining Room Light"
+    emulated_hue_name: "dining room light"
+    emulated_hue: true
+  light.lampdimmer_level:
+    friendly_name: "Tree Light"
+    emulated_hue_name: "tree light"
+    emulated_hue: true
+  light.kitchendimmer_level:
+    friendly_name: "Kitchen Light"
+    emulated_hue_name: "kitchen light"
+    emulated_hue: true
+  light.livingroomdimmer_level:
+    friendly_name: "Living Room Lights"
+    emulated_hue_name: "living room light"
+    emulated_hue: true
+  light.rgbw_stairs:
+    friendly_name: "Stair Lights"
+  light.rgbw_desk:
+    friendly_name: "Desk Light"

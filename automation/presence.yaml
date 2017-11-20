@@ -1,0 +1,24 @@
+  - alias: "Kristine's Home"
+    trigger:
+      - platform: state
+        entity_id: device_tracker.kristine_bt
+        to: 'home'
+    condition:
+      - condition: state
+        entity_id: device_tracker.tyler_bt
+        state: 'home'
+    action:
+      - service: light.turn_on
+        entity_id:
+        - light.rgbw_desk
+        data:
+          brightness: 255
+          rgb_color: [255,0,0]
+      - service: light.turn_on
+        entity_id:
+        - light.rgbw_desk
+        data:
+          rgb_color: [0,255,0]
+      - service: light.turn_off
+        entity_id:
+        - light.rgbw_desk

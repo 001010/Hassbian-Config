@@ -1,0 +1,159 @@
+  - alias: "Water Sensor Leak Alarm"
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.watersensor_flood
+        above: 250
+    action:
+      - service: notify.telegram
+        data:
+          message: "HUMIDIFIER LEAK DETECTED!"
+
+  - alias: "Bedroom Humidity Control ON"
+    trigger:
+    - platform: state
+      entity_id: input_number.bedroom_humidity
+    - platform: state
+      entity_id: sensor.bedroomsensor_relative_humidity
+    condition:
+    - condition: template
+      value_template: "{{ float(states('sensor.bedroomsensor_relative_humidity')) < float(states('input_number.bedroom_humidity')) }}"
+    action:
+    - service: switch.turn_on
+      entity_id:
+      - switch.outlet1_switch
+      
+  - alias: "Bedroom Humidity Control OFF"
+    trigger:
+    - platform: state
+      entity_id: input_number.bedroom_humidity
+    - platform: state
+      entity_id: sensor.bedroomsensor_relative_humidity
+    condition:
+    - condition: template
+      value_template: "{{ float(states('sensor.bedroomsensor_relative_humidity')) >= float(states('input_number.bedroom_humidity')) }}"
+    action:
+    - service: switch.turn_off
+      entity_id:
+      - switch.outlet1_switch
+          
+# House Temperature Capture          
+  - alias: temperature_downstairs
+    trigger:
+    - platform: state
+      entity_id: input_number.temperature_downstairs
+    - platform: state
+      entity_id: sensor.multisensore_temperature
+    - platform: state
+      entity_id: sensor.entryway_thermostat_temperature
+    action:
+      service: input_number.set_value
+      data_template:
+        entity_id: input_number.temperature_downstairs
+        value: "{{ ((float(states('sensor.multisensore_temperature'))+float(states('sensor.entryway_thermostat_temperature')))/2) | round(1) }}"
+
+  - alias: temperature_upstairs
+    trigger:
+    - platform: state
+      entity_id: input_number.temperature_upstairs
+    - platform: state
+      entity_id: sensor.multisensorb_temperature
+    - platform: state
+      entity_id: sensor.bedroomsensor_temperature
+    action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.temperature_upstairs
+        value: "{{ ((float(states('sensor.multisensorb_temperature'))+float(states('sensor.bedroomsensor_temperature')))/2) | round(1) }}"
+
+  - alias: temperature_house
+    trigger:
+    - platform: state
+      entity_id: input_number.temperature_house
+    - platform: state
+      entity_id: sensor.multisensorb_temperature
+    - platform: state
+      entity_id: sensor.multisensore_temperature
+    - platform: state
+      entity_id: sensor.bedroomsensor_temperature
+    - platform: state
+      entity_id: sensor.entryway_thermostat_temperature
+    action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.temperature_house
+        value: "{{ ((float(states('sensor.multisensorb_temperature'))+float(states('sensor.multisensore_temperature'))+float(states('sensor.multisensore_temperature'))+float(states('sensor.entryway_thermostat_temperature')))/4) | round(1) }}"
+
+  - alias: temperature_outside
+    trigger:
+    - platform: state
+      entity_id: input_number.temperature_outside
+    - platform: state
+      entity_id: sensor.multisensorb_temperature
+    - platform: state
+      entity_id: sensor.pws_temp_f
+    action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.temperature_outside
+        value: "{{ ((float(states('sensor.multisensorf_temperature'))+float(states('sensor.pws_temp_f')))/2) | round(1) }}"
+
+  - alias: outside_warmer
+    trigger:
+      platform: template
+      value_template: "{% if (states('input_number.temperature_outside') > states('input_number.temperature_house'))%}true{% endif %}"
+    action:
+    - service: input_boolean.turn_on
+      entity_id:
+      - input_boolean.outside_warmer
+    - service: input_boolean.turn_off
+      entity_id:
+      - input_boolean.outside_cooler
+    - service: script.update_all_temp_sheet
+    
+  - alias: outside_cooler
+    trigger:
+      platform: template
+      value_template: "{% if (states('input_number.temperature_outside') < states('input_number.temperature_house'))%}true{% endif %}"
+    action:
+    - service: input_boolean.turn_off
+      entity_id:
+      - input_boolean.outside_warmer
+    - service: input_boolean.turn_on
+      entity_id:
+      - input_boolean.outside_cooler
+    - service: script.update_all_temp_sheet
+    
+  - alias: cool_down_house_on
+    initial_state: off
+    trigger:
+      platform: state
+      entity_id: input_boolean.outside_cooler
+      to: 'on'
+    action:
+    - service: switch.turn_on
+      entity_id:
+      - switch.housefan_switch
+      - switch.windowfan_switch
+      
+  - alias: cool_down_house_off
+    trigger:
+      platform: state
+      entity_id: input_boolean.outside_warmer
+      to: 'on'
+    action:
+    - service: switch.turn_off
+      entity_id:
+      - switch.housefan_switch
+      - switch.windowfan_switch
+
+  - alias: "Climate Update"
+    trigger:
+    - platform: time
+      minutes: 0
+      seconds: 00
+    - platform: sun
+      event: sunset
+    - platform: sun
+      event: sunrise
+    action:
+    - service: script.update_all_temp_sheet

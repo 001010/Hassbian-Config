@@ -1,0 +1,17 @@
+'update_temperature_sheet':
+  alias: Update Temperature to Google Sheets
+  sequence:
+  - service: ifttt.trigger
+    data_template: {"event":"Temperature","value1":"{{states.input_number.temperature_downstairs.state}}","value2":"{{states.input_number.temperature_upstairs.state}}","value3":"{{states.input_number.temperature_outside.state}}"}
+'update_climate_sheet':
+  alias: Update Climate to Google Sheets
+  sequence:
+  - service: ifttt.trigger
+    data_template: {"event":"Climate","value1":"{{states.input_number.temperature_house.state}}","value2":"{{states.input_number.temperature_outside.state}}","value3":"{{states.input_boolean.outside_cooler.state}}"}
+'update_all_temp_sheet':
+  alias: Update All Temps to Sheets
+  sequence:
+  - service: ifttt.trigger
+    data_template: {"event":"Climate","value1":"{{states.input_number.temperature_house.state}}","value2":"{{states.input_number.temperature_outside.state}}","value3":"{{states.input_boolean.outside_cooler.state}}"}
+  - service: ifttt.trigger
+    data_template: {"event":"Temperature","value1":"{{states.input_number.temperature_downstairs.state}}","value2":"{{states.input_number.temperature_upstairs.state}}","value3":"{{states.input_number.temperature_outside.state}}"}

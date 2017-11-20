@@ -1,0 +1,41 @@
+  - alias: "Turn on light when sun sets"
+    trigger:
+      platform: sun
+      event: sunset
+      offset: -00:30
+    action:
+      - service: light.turn_on
+        entity_id:
+          - light.livingroomdimmer_level
+          - light.kitchendimmer_level
+        data:
+          brightness: 255
+      - service: switch.turn_on
+        entity_id:
+          - switch.frontporchlight_switch
+      - service: notify.telegram
+        data:
+          message: "It's Sunset."
+          
+  - alias: "Turn off light when sun rises"
+    trigger:
+      platform: sun
+      event: sunrise
+    action:
+      - service: switch.turn_off
+        entity_id:
+        - switch.frontporchlight_switch
+        - switch.outdoorswitch_switch
+      - service: input_boolean.turn_off
+        entity_id:
+        - input_boolean.night_tv_mode
+        
+  - alias: "Turn on holiday light when sunset"
+    trigger:
+      platform: sun
+      event: sunset
+    action:
+      - service: switch.turn_on
+        entity_id:
+        - switch.outdoorswitch_switch
+        
