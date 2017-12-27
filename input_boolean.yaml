@@ -12,3 +12,11 @@
     initial: off
   cool_down_house:
     initial: off
+  phase_morning:
+    initial: off
+  phase_day:
+    initial: off
+  phase_evening:
+    initial: off
+  phase_night:
+    initial: off

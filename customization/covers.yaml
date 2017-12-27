@@ -1,9 +1,10 @@
 ## Emulated Hue items:
-## Must use 'emulated_hue: true' on each item then restart the HA service. Reloading core config and groups will not make this work.
+## Must use 'emulated_hue_hidden: false' on each item then restart the HA service. Reloading core config and groups will not make this work.
 
 # Covers  
   cover.2car_garage_door_opener:
     friendly_name: "Garage Door"
     emulated_hue_name: "Garage Door"
-    emulated_hue: true
+    emulated_hue_hidden: false
     icon: mdi:garage
+    device_class: garage

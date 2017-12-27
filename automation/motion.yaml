@@ -8,7 +8,6 @@
         entity_id: input_boolean.kid_alarm
         state: 'on'
     action:
-      - service: notify.pushbullet
-        data_template:
-          title: "Motion Detected!"
-          message: "Motion Detected Upstairs!"
+      - service: notify.telegram
+        data:
+          message: "Kid Alarm Triggered!"

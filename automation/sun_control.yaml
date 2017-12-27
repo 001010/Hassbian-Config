@@ -1,4 +1,96 @@
-  - alias: "Turn on light when sun sets"
+## Phases
+  - alias: "Phase Morning"
+    trigger:
+    - platform: time
+      at: '3:00:00'
+    action:
+    - service: input_boolean.turn_on
+      entity_id:
+        - input_boolean.phase_morning
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.phase_day
+        - input_boolean.phase_evening
+        - input_boolean.phase_night
+  - alias: "Phase Day"
+    trigger:
+    - platform: sun
+      event: sunrise
+      offset: +01:00
+    action:
+    - service: input_boolean.turn_on
+      entity_id:
+        - input_boolean.phase_day
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.phase_morning
+        - input_boolean.phase_evening
+        - input_boolean.phase_night
+  - alias: "Phase Evening"
+    trigger:
+    - platform: sun
+      event: sunset
+    action:
+    - service: input_boolean.turn_on
+      entity_id:
+        - input_boolean.phase_evening
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.phase_morning
+        - input_boolean.phase_day
+        - input_boolean.phase_night
+  - alias: "Phase Night"
+    trigger:
+    - platform: time
+      at: '20:00:00'
+    action:
+    - service: input_boolean.turn_on
+      entity_id:
+        - input_boolean.phase_night
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.phase_morning
+        - input_boolean.phase_day
+        - input_boolean.phase_evening
+
+## Sunrise
+  - alias: "At Sunrise"
+    trigger:
+      platform: sun
+      event: sunrise
+    action:
+      - service: light.turn_on
+        entity_id:
+          - light.livingroomdimmer_level
+          - light.kitchendimmer_level
+          - light.diningdimmer_level
+        data:
+          brightness: 255
+      - delay: 0:05
+      - service: light.turn_off
+        entity_id:
+          - light.livingroomdimmer_level
+          - light.kitchendimmer_level
+          - light.diningdimmer_level
+      - service: switch.turn_off
+        entity_id:
+        - switch.frontporchlight_switch
+        - switch.outdoorswitch_switch
+      - service: input_boolean.turn_off
+        entity_id:
+        - input_boolean.night_tv_mode
+        
+## Sunset
+  - alias: "At Sunset"
+    trigger:
+      platform: sun
+      event: sunset
+    action:
+      - service: notify.telegram
+        data:
+          message: "It's Sunset."
+
+  - alias: "Turn ON Lights at Sunset+30minutes"
     trigger:
       platform: sun
       event: sunset
@@ -13,24 +105,9 @@
       - service: switch.turn_on
         entity_id:
           - switch.frontporchlight_switch
-      - service: notify.telegram
-        data:
-          message: "It's Sunset."
-          
-  - alias: "Turn off light when sun rises"
-    trigger:
-      platform: sun
-      event: sunrise
-    action:
-      - service: switch.turn_off
-        entity_id:
-        - switch.frontporchlight_switch
-        - switch.outdoorswitch_switch
-      - service: input_boolean.turn_off
-        entity_id:
-        - input_boolean.night_tv_mode
-        
-  - alias: "Turn on holiday light when sunset"
+
+## Holiday Lights
+  - alias: "Holiday Lights: ON at Sunset"
     trigger:
       platform: sun
       event: sunset
@@ -38,4 +115,13 @@
       - service: switch.turn_on
         entity_id:
         - switch.outdoorswitch_switch
-        
+
+  - alias: "Holiday Lights: OFF at Midnight"
+    trigger:
+    - platform: time
+      at: '0:00:00'
+    action:
+      - service: switch.turn_off
+        entity_id:
+        - switch.outdoorswitch_switch
+          

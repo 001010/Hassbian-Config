@@ -70,7 +70,7 @@
     icon: mdi:battery
   input_number.bedroom_humidity:
     emulated_hue_name: "bedroom humidity"
-    emulated_hue: true
+    emulated_hue_hidden: false
     icon: mdi:water-percent
     
   sensor.watersensor_flood:

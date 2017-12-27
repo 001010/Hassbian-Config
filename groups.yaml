@@ -161,8 +161,8 @@
     view: yes
     icon: mdi:account-multiple
     entities:
-    - group.tyler
-    - group.kristine
+    - group.track_Tyler
+    - group.track_Kristine
   Routines:
     view: yes
     icon: mdi:code-tags-check

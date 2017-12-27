@@ -46,6 +46,17 @@ http:
   base_url: !secret http_base_url
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
+  
+## DuckDNS ##
+duckdns:
+  domain: !secret duckdns_domain
+  access_token: !secret duckdns_token
+
+## No-IP ##
+no_ip:
+  domain: !secret no-ip_domain
+  username: !secret no-ip_username
+  password: !secret no-ip_password
 
 # Sensor
 sensor: !include sensor.yaml
@@ -160,4 +171,4 @@ media_player:
   - platform: sonos
 
 shell_command:
-  ssl_renew: ~/certbot renew --dry-run --standalone --preferred-challenges http-01
+  ssl_renew: ~/certbot renew --standalone --preferred-challenges http-01
