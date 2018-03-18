@@ -1,0 +1,11 @@
+  - alias: "Night TV Mode"
+    trigger:
+      - platform: state
+        entity_id: input_boolean.night_tv_mode
+        to: 'on'
+    action:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.night_tv_mode
+    - service: scene.turn_on
+      entity_id: scene.night_tv_mode

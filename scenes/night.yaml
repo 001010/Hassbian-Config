@@ -1,6 +1,112 @@
-  - name: "Night Mode"
+## Color Names - https://www.w3.org/TR/2010/PR-css3-color-20101028/#svg-color
+
+## Living Room
+  - name: night_tv_mode
     entities:
-      light.kitchendimmer_level_8_0: off
-      light.livingroomdimmer_level_9_0:
+      light.kitchendimmer_level:
+        state: off
+      light.diningdimmer_level: 
+        state: off
+      light.livingroomdimmer_level:
         state: on
-        brightness: 20
+        brightness: 40
+
+## Front House
+  - name: frontlights_normal_porch
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        kelvin: 2800
+
+  - name: frontlights_normal
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        kelvin: 2800
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        kelvin: 2800
+
+  - name: frontlights_valentines
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'hotpink'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'deeppink'
+        
+  - name: frontlights_stpattys
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'lime'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'darkgreen'
+        
+  - name: frontlights_july4th
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Blue'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Red'
+
+  - name: frontlights_halloween
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Orange'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Purple'
+        
+  - name: frontlights_thanksgiving
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Yellow'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Orange'
+
+  - name: frontlights_christmas
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Green'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Red'

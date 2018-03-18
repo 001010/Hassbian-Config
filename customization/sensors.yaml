@@ -1,3 +1,5 @@
+# Binary sensors not attached to other sensor functions will be found in customization\binary_sensor.yaml
+
 # Sensors  
   binary_sensor.multisensorb_sensor:
     friendly_name: "Upstairs Motion"

@@ -15,6 +15,18 @@
     emulated_hue_name: "Kid Alarm"
     emulated_hue_hidden: false
     icon: mdi:theme-light-dark
+  input_boolean.sexy_mode:
+    friendly_name: "Sexy Mode"
+    emulated_hue_name: "Sexy Mode"
+    emulated_hue_hidden: false
+  input_boolean.warning_upstairs:
+    friendly_name: "Upstairs Warning"
+    emulated_hue_name: "Upstairs Warning"
+    emulated_hue_hidden: false
+  input_boolean.warning_downstairs:
+    friendly_name: "Downstairs Warning"
+    emulated_hue_name: "Downstairs Warning"
+    emulated_hue_hidden: false
   
   input_number.stairs_rgb_r:
     emulated_hue_name: "Stair Color Red"

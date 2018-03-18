@@ -1,0 +1,19 @@
+  - name: sunrise_reset
+    entities:
+      light.kitchendimmer_level:
+        state: on
+        brightness: 255
+      light.diningdimmer_level: 
+        state: on
+        brightness: 255
+      light.livingroomdimmer_level:
+        state: on
+        brightness: 255
+  - name: sunrise
+    entities:
+      light.kitchendimmer_level:
+        state: off
+      light.diningdimmer_level: 
+        state: off
+      light.livingroomdimmer_level:
+        state: off

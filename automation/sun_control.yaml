@@ -16,7 +16,6 @@
     trigger:
     - platform: sun
       event: sunrise
-      offset: +01:00
     action:
     - service: input_boolean.turn_on
       entity_id:
@@ -59,19 +58,12 @@
       platform: sun
       event: sunrise
     action:
-      - service: light.turn_on
-        entity_id:
-          - light.livingroomdimmer_level
-          - light.kitchendimmer_level
-          - light.diningdimmer_level
-        data:
-          brightness: 255
+      # - service: scene.turn_on
+        # entity_id:
+          # - scene.sunset
+        # data:
+          # brightness: 255
       - delay: 0:05
-      - service: light.turn_off
-        entity_id:
-          - light.livingroomdimmer_level
-          - light.kitchendimmer_level
-          - light.diningdimmer_level
       - service: switch.turn_off
         entity_id:
         - switch.frontporchlight_switch
@@ -90,23 +82,28 @@
         data:
           message: "It's Sunset."
 
-  - alias: "Turn ON Lights at Sunset+30minutes"
+  - alias: "Turn ON Lights 5minutes before sunset"
     trigger:
-      platform: sun
-      event: sunset
-      offset: -00:30
+      - platform: sun
+        event: sunset
+        offset: -00:05
     action:
-      - service: light.turn_on
-        entity_id:
-          - light.livingroomdimmer_level
-          - light.kitchendimmer_level
-        data:
-          brightness: 255
       - service: switch.turn_on
         entity_id:
           - switch.frontporchlight_switch
+      - delay: 1:00
+      - service: script.front_lights
 
 ## Holiday Lights
+  - alias: "Determine Holiday"
+    trigger:
+    - platform: time
+      at: '0:00:01'
+    - platform: event
+      event_type: homeassistant_start
+    action:
+      - service: script.holiday
+
   - alias: "Holiday Lights: ON at Sunset"
     trigger:
       platform: sun

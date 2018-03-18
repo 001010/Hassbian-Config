@@ -36,6 +36,9 @@ sun:
 # Enables Amazon Echo / Hue functions:
 emulated_hue:
   expose_by_default: false
+  
+tradfri:
+  host: !secret tradfri_ip
  
 alexa: !include alexa.yaml
 ## Groups ##
@@ -58,6 +61,11 @@ no_ip:
   username: !secret no-ip_username
   password: !secret no-ip_password
 
+# Google
+google:
+  client_id: 109191048287-9gn8tmn86c9ha2538s4opm8peut1teob.apps.googleusercontent.com
+  client_secret: ozWdinh5ng29vHxG4QHwUlgs
+  
 # Sensor
 sensor: !include sensor.yaml
 
@@ -82,15 +90,18 @@ panel_custom: !include panel_custom.yaml
 ## Configurations ##
 config:
 
+## Map Panel ##
+map:
+
 zwave:
   usb_path: /dev/zwave
   network_key: !secret zwave_key
   autoheal: false
 #  polling_interval: 60000
 
-# zha:
-  # usb_path: /dev/ttyUSB0
-  # database_path: /home/homeassistant/.homeassistant/zigbee.db
+zha:
+  usb_path: /dev/zigbee
+  database_path: /home/homeassistant/.homeassistant/zigbee.db
 
 notify:
   - name: pushbullet
@@ -120,6 +131,11 @@ device_tracker:
   - platform: owntracks
   - platform: bluetooth_tracker
     device_id: hci0
+  - platform: asuswrt
+    host: !secret asus_host
+    username: !secret asus_username
+    password: !secret asus_password
+    protocol: telnet
 
 mqtt:
   broker: m13.cloudmqtt.com

@@ -1,0 +1,41 @@
+  - alias: sunset
+    trigger:
+      - platform: state
+        entity_id: input_boolean.phase_evening
+        to: 'on'
+    action:
+    - service: scene.turn_on
+      entity_id:
+        - scene.sunset_reset
+    - service: scene.turn_on
+      entity_id:
+        - scene.sunset
+        
+  - alias: motion_front_on
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.multisensorf_sensor
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: switch.frontporchlight_switch
+        state: 'on'
+      - condition: template
+        value_template: '{{ states.input_select.holiday != "None" }}'
+    action:
+    - service: scene.turn_on
+      entity_id: scene.frontlights_normal_porch
+      
+  - alias: motion_front_off
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.multisensorf_sensor
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: switch.frontporchlight_switch
+        state: 'on'
+      - condition: template
+        value_template: '{{ states.input_select.holiday != "None" }}'
+    action:
+    - service: script.front_lights

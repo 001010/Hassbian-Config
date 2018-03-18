@@ -1,0 +1,12 @@
+  - alias: sunrise
+    trigger:
+      - platform: state
+        entity_id: input_boolean.phase_day
+        to: 'on'
+    action:
+    - service: scene.turn_on
+      entity_id:
+        - scene.sunrise_reset
+    - service: scene.turn_on
+      entity_id:
+        - scene.sunrise

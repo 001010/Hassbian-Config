@@ -39,6 +39,7 @@
     - input_number.temperature_outside
     - input_boolean.outside_warmer
     - input_boolean.outside_cooler
+    - group.phases
     - switch.windowfan_switch
     - switch.housefan_switch
     - climate.entryway
@@ -50,6 +51,7 @@
     entities:
     - automation.ssl_renew
     - group.speedtest
+    - group.pings
     - group.ssl_certificate
     - history_graph.comcast_speedtests
   Downstairs:
@@ -61,15 +63,12 @@
     - group.kitchen
     - group.living_room
     - group.entryway
+    - climate.entryway
+    - group.entryway_sensor
+    - group.stair_lights
   Upstairs:
     view: yes
     icon: mdi:numeric-2-box
-    entities:
-    - group.upstairs_sensor
-    - group.master_bedroom
-  Upstairs Hall:
-    view: yes
-    icon: mdi:arrow-up-bold-box-outline
     entities:
     - group.upstairs_sensor
     - switch.housefan_switch
@@ -78,7 +77,7 @@
     view: yes
     icon: mdi:office
     entities:
-    - light.rgbw_desk
+    - light.rgbwdesk
     - group.upstairs_sensor
     - group.entryway_sensor
     - group.front_porch_sensor
@@ -101,8 +100,17 @@
     name: Front Porch Lights
     view: no
     entities:
+    - light.rgbwfrontporch
+    - light.rgbwfrontgarage
     - switch.frontporchlight_switch
     - switch.outdoorswitch_switch
+  Front Porch Scenes:
+    name: Front Porch Scenes
+    view: no
+    entities:
+    - input_select.holiday
+    - script.holiday
+    - script.front_lights
   Front Porch:
     name: Front Porch
     view: yes
@@ -115,19 +123,12 @@
     - sensor.pws_pressure_in
     - group.front_porch_lights
     - group.front_porch_sensor
+    - group.front_porch_scenes
   Stairs:
     name: Stairs
     view: yes
     icon: mdi:stairs
     entities:
-    - group.stair_lights
-  Entryway:
-    name: Entryway
-    view: yes
-    icon: mdi:swap-horizontal
-    entities:
-    - climate.entryway
-    - group.entryway_sensor
     - group.stair_lights
   Living Room:
     name: Living Room
@@ -145,6 +146,7 @@
     icon: mdi:human-male-female
     entities:
     - group.bedroom_sensor
+    - group.nightstands
     - switch.outlet1_switch
     - group.humidifier
     - automation.bedroom_humidity_control_on
@@ -170,7 +172,7 @@
       - automation.speed_test_update
       - automation.turn_on_light_when_sun_sets
       - automation.turn_off_light_when_sun_rises
-      - automation.turn_on_holiday_light_when_sunset
+      - automation.holiday_lights_on_at_sunset
       - automation.stairs_lights_on_night_motion
       - automation.upstairs_motion_notification
       - automation.humidity_leak_alarm
@@ -223,6 +225,10 @@
     - sensor.bedroomsensor_ultraviolet
     - sensor.bedroomsensor_burglar
     - sensor.zwave_bedroomsensor_battery
+  Nightstands:
+    entities:
+    - light.kristines_night_stand
+    - light.tylers_night_stand
   Water Sensor:
     entities:
     - sensor.watersensor_flood
@@ -265,6 +271,13 @@
     - sun.sun
     - sun.next_rising
     - sun.next_setting
+  Phases:
+    name: Day Phases
+    entities:
+    - input_boolean.phase_morning
+    - input_boolean.phase_day
+    - input_boolean.phase_evening
+    - input_boolean.phase_night
 
 # System
   SSL Certificate:
@@ -276,7 +289,15 @@
     - sensor.speedtest_ping
     - sensor.speedtest_download
     - sensor.speedtest_upload
-    
+  pings:
+    name: Online
+    entities:
+    - binary_sensor.ping_maxx
+    - binary_sensor.ping_pihole
+    - binary_sensor.ping_lightify
+    - binary_sensor.ping_tradfri
+    - binary_sensor.ping_chamberlain
+  
   zones:
     name: Zones
     entities:

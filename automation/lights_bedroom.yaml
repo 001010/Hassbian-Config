@@ -1,0 +1,11 @@
+  - alias: "Sexy Mode"
+    trigger:
+      - platform: state
+        entity_id: input_boolean.sexy_mode
+        to: 'on'
+    action:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.sexy_mode
+    - service: scene.turn_on
+      entity_id: scene.sexy

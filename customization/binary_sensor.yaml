@@ -1,0 +1,13 @@
+# Sensors and their Binary Sensor counterparts will be found in customization\sensors.yaml
+
+# Binary Sensors  
+  binary_sensor.ping_maxx:
+    friendly_name: "Maxx"
+  binary_sensor.ping_pihole:
+    friendly_name: "PiHole"
+  binary_sensor.ping_tradfri:
+    friendly_name: "Tradfri"
+  binary_sensor.ping_lightify:
+    friendly_name: "Lightify"
+  binary_sensor.ping_chamberlain:
+    friendly_name: "Chamberlain"

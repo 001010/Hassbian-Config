@@ -5,3 +5,15 @@
      - Kristine
     initial: Tyler
     icon: mdi:panda
+  holiday:
+    name: Holiday Lighting
+    options:
+      - None
+      - Valentine's Day
+      - St. Patrick's Day
+      - Independence Day
+      - Halloween
+      - Thanksgiving
+      - Christmas
+    initial: None
+    icon: mdi:gift

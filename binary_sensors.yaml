@@ -1,3 +1,18 @@
   # - platform: mqtt
     # state_topic: dummy/custom_ui/floorplan/sensor
     # name: Floorplan
+  - platform: ping
+    name: ping_Maxx
+    host: 192.168.1.5
+  - platform: ping
+    name: ping_PiHole
+    host: 192.168.126
+  - platform: ping
+    name: ping_Tradfri
+    host: 192.168.1.176
+  - platform: ping
+    name: ping_Lightify
+    host: 192.168.1.130
+  - platform: ping
+    name: ping_Chamberlain
+    host: 192.168.1.199

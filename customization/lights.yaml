@@ -18,7 +18,33 @@
     friendly_name: "Living Room Lights"
     emulated_hue_name: "living room light"
     emulated_hue_hidden: false
+
+#Tradfri
+  light.kristines_night_stand:
+    friendly_name: "Kristine's Night Stand"
+    emulated_hue_name: "kristines night stand"
+    emulated_hue_hidden: false
+  light.tylers_night_stand:
+    friendly_name: "Tyler's Night Stand"
+    emulated_hue_name: "tylers night stand"
+    emulated_hue_hidden: false
+  group.nightstands:
+    friendly_name: "Night Stands"
+    emulated_hue_name: "night stands"
+    emulated_hue_hidden: false
+    
+# OSRAM Lightify
   light.rgbw_stairs:
     friendly_name: "Stair Lights"
-  light.rgbw_desk:
+  light.rgbwdesk:
     friendly_name: "Desk Light"
+    emulated_hue_name: "desk light"
+    emulated_hue_hidden: false
+  light.rgbwfrontporch:
+    friendly_name: "Front Porch Light"
+    emulated_hue_name: "front porch light"
+    emulated_hue_hidden: false
+  light.rgbwfrontgarage:
+    friendly_name: "Front Garage Light"
+    emulated_hue_name: "front garage light"
+    emulated_hue_hidden: false

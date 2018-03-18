@@ -1,4 +1,4 @@
-  - alias: "Upstairs Motion Notification"
+  - alias: "Kid Alarm ON"
     trigger:
       - platform: state
         entity_id: binary_sensor.multisensorb_sensor
@@ -8,6 +8,76 @@
         entity_id: input_boolean.kid_alarm
         state: 'on'
     action:
-      - service: notify.telegram
-        data:
-          message: "Kid Alarm Triggered!"
+    - service: notify.telegram
+      data:
+        message: "Kid Alarm Triggered!"
+        
+  - alias: "Upstairs Warning ON"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.multisensorb_sensor
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.warning_upstairs
+        state: 'on'
+    action:
+    - service: light.turn_on
+      entity_id:
+        - light.desk
+      data:
+        brightness: 254
+        rgb_color: [0, 0, 255]
+
+  - alias: "Upstairs Warning OFF"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.multisensorb_sensor
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: input_boolean.warning_upstairs
+        state: 'on'
+    action:
+    - service: light.turn_on
+      entity_id:
+        - light.desk
+      data:
+        brightness: 254
+        rgb_color: [255, 255, 0]
+    - service: light.turn_off
+      entity_id:
+        - light.desk
+
+  - alias: "Downstairs Warning ON"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.multisensore_sensor
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_boolean.warning_downstairs
+        state: 'on'
+    action:
+    - service: light.turn_on
+      entity_id:
+        - light.desk
+      data:
+        brightness: 254
+        rgb_color: [0, 255, 0]
+        
+  - alias: "Downstairs Warning OFF"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.multisensore_sensor
+        to: 'off'
+    condition:
+      - condition: state
+        entity_id: input_boolean.warning_downstairs
+        state: 'on'
+    action:
+    - service: light.turn_off
+      entity_id:
+        - light.desk
+
+   
