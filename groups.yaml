@@ -196,35 +196,35 @@
     - sensor.entryway_thermostat_hvac_state
   Upstairs Sensor:
     entities:
-    - binary_sensor.multisensorb_sensor
-    - sensor.multisensorb_luminance
-    - sensor.multisensorb_relative_humidity
-    - sensor.multisensorb_temperature
-    - sensor.zwave_multisensorb_battery
+    - binary_sensor.motion_upstairs_sensor
+    - sensor.motion_upstairs_luminance
+    - sensor.motion_upstairs_relative_humidity
+    - sensor.motion_upstairs_temperature
+    - sensor.zwave_motion_upstairs_battery
   Entryway Sensor:
     entities:
-    - binary_sensor.multisensore_sensor
-    - sensor.multisensore_luminance
-    - sensor.multisensore_relative_humidity
-    - sensor.multisensore_temperature
-    - sensor.zwave_multisensore_battery
+    - binary_sensor.motion_entryway_sensor
+    - sensor.motion_entryway_luminance
+    - sensor.motion_entryway_relative_humidity
+    - sensor.motion_entryway_temperature
+    - sensor.zwave_motion_entryway_battery
   Front Porch Sensor:
     entities:
-    - binary_sensor.multisensorf_sensor
-    - sensor.multisensorf_luminance
-    - sensor.multisensorf_relative_humidity
-    - sensor.multisensorf_temperature
-    - sensor.zwave_multisensorf_battery
+    - binary_sensor.motion_front_sensor
+    - sensor.motion_front_luminance
+    - sensor.motion_front_relative_humidity
+    - sensor.motion_front_temperature
+    - sensor.zwave_motion_front_battery
   Bedroom Sensor:
     entities:
     - input_number.bedroom_humidity
-    - binary_sensor.bedroomsensor_sensor
-    - sensor.bedroomsensor_temperature
-    - sensor.bedroomsensor_luminance
-    - sensor.bedroomsensor_relative_humidity
-    - sensor.bedroomsensor_ultraviolet
-    - sensor.bedroomsensor_burglar
-    - sensor.zwave_bedroomsensor_battery
+    - binary_sensor.motion_masterbedroom_sensor
+    - sensor.motion_masterbedroom_temperature
+    - sensor.motion_masterbedroom_luminance
+    - sensor.motion_masterbedroom_relative_humidity
+    - sensor.motion_masterbedroom_ultraviolet
+    - sensor.motion_masterbedroom_burglar
+    - sensor.zwave_motion_masterbedroom_battery
   Nightstands:
     entities:
     - light.kristines_night_stand

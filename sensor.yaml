@@ -32,23 +32,23 @@
 #Templates
   - platform: template
     sensors:
-      zwave_bedroomsensor_battery:
-        value_template: '{{ states.zwave.bedroomsensor.attributes.battery_level | int }}'
+      zwave_motion_masterbedroom_battery:
+        value_template: '{{ states.zwave.motion_masterbedroom.attributes.battery_level | int }}'
         unit_of_measurement: '%'
         friendly_name: "Battery Level"
         icon_template: mdi:battery
-      zwave_multisensorb_battery:
-        value_template: '{{ states.zwave.multisensorb.attributes.battery_level | int }}'
+      zwave_motion_upstairs_battery:
+        value_template: '{{ states.zwave.motion_upstairs.attributes.battery_level | int }}'
         unit_of_measurement: '%'
         friendly_name: "Battery Level"
         icon_template: mdi:battery
-      zwave_multisensore_battery:
-        value_template: '{{ states.zwave.multisensore.attributes.battery_level | int }}'
+      zwave_motion_entryway_battery:
+        value_template: '{{ states.zwave.motion_entryway.attributes.battery_level | int }}'
         unit_of_measurement: '%'
         friendly_name: "Battery Level"
         icon_template: mdi:battery
-      zwave_multisensorf_battery:
-        value_template: '{{ states.zwave.multisensorf.attributes.battery_level | int }}'
+      zwave_motion_front_battery:
+        value_template: '{{ states.zwave.motion_front.attributes.battery_level | int }}'
         unit_of_measurement: '%'
         friendly_name: "Battery Level"
         icon_template: mdi:battery

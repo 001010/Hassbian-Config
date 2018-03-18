@@ -14,7 +14,7 @@
   - alias: motion_front_on
     trigger:
       - platform: state
-        entity_id: binary_sensor.multisensorf_sensor
+        entity_id: binary_sensor.motion_front_sensor
         to: 'on'
     condition:
       - condition: state
@@ -29,7 +29,7 @@
   - alias: motion_front_off
     trigger:
       - platform: state
-        entity_id: binary_sensor.multisensorf_sensor
+        entity_id: binary_sensor.motion_front_sensor
         to: 'off'
     condition:
       - condition: state

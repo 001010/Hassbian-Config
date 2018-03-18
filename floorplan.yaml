@@ -91,10 +91,10 @@
 
         - name: Motion sensors
           entities:
-            - binary_sensor.bedroomsensor_sensor
-            - binary_sensor.multisensorb_sensor
-            - binary_sensor.multisensore_sensor
-            - binary_sensor.multisensorf_sensor
+            - binary_sensor.motion_masterbedroom_sensor
+            - binary_sensor.motion_upstairs_sensor
+            - binary_sensor.motion_entryway_sensor
+            - binary_sensor.motion_front_sensor
           states:
             - state: 'off'
               class: 'info-background'

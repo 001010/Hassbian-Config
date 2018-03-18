@@ -5,9 +5,6 @@
     name: ping_Maxx
     host: 192.168.1.5
   - platform: ping
-    name: ping_PiHole
-    host: 192.168.126
-  - platform: ping
     name: ping_Tradfri
     host: 192.168.1.176
   - platform: ping

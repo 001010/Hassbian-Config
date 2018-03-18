@@ -1,0 +1,24 @@
+
+- cal_id: tyler.rodgers@gmail.com
+  entities:
+  - device_id: tylerrodgersgmailcom
+    name: tyler.rodgers@gmail.com
+    track: false
+
+- cal_id: tvahsmin7gcivdfi5n07m9j300@group.calendar.google.com
+  entities:
+  - device_id: rodgers_family
+    name: Rodgers Family
+    track: false
+
+- cal_id: en.usa#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: holidays_in_united_states
+    name: Holidays in United States
+    track: true
+
+- cal_id: '#contacts@group.v.calendar.google.com'
+  entities:
+  - device_id: contacts
+    name: Contacts
+    track: false

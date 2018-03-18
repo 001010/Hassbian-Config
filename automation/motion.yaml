@@ -1,7 +1,7 @@
   - alias: "Kid Alarm ON"
     trigger:
       - platform: state
-        entity_id: binary_sensor.multisensorb_sensor
+        entity_id: binary_sensor.motion_upstairs_sensor
         to: 'on'
     condition:
       - condition: state
@@ -15,7 +15,7 @@
   - alias: "Upstairs Warning ON"
     trigger:
       - platform: state
-        entity_id: binary_sensor.multisensorb_sensor
+        entity_id: binary_sensor.motion_upstairs_sensor
         to: 'on'
     condition:
       - condition: state
@@ -32,7 +32,7 @@
   - alias: "Upstairs Warning OFF"
     trigger:
       - platform: state
-        entity_id: binary_sensor.multisensorb_sensor
+        entity_id: binary_sensor.motion_upstairs_sensor
         to: 'off'
     condition:
       - condition: state
@@ -52,7 +52,7 @@
   - alias: "Downstairs Warning ON"
     trigger:
       - platform: state
-        entity_id: binary_sensor.multisensore_sensor
+        entity_id: binary_sensor.motion_entryway_sensor
         to: 'on'
     condition:
       - condition: state
@@ -69,7 +69,7 @@
   - alias: "Downstairs Warning OFF"
     trigger:
       - platform: state
-        entity_id: binary_sensor.multisensore_sensor
+        entity_id: binary_sensor.motion_entryway_sensor
         to: 'off'
     condition:
       - condition: state

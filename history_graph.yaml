@@ -2,11 +2,11 @@
   climate:
     name: Climate Graph
     entities:
-      - sensor.bedroomsensor_temperature
-      - sensor.multisensorb_temperature
-      - sensor.multisensore_temperature
+      - sensor.motion_masterbedroom_temperature
+      - sensor.motion_upstairs_temperature
+      - sensor.motion_entryway_temperature
       - sensor.entryway_thermostat_temperature
-      - sensor.multisensorf_temperature
+      - sensor.motion_front_temperature
       - sensor.pws_temp_f
     hours_to_show: 120
     refresh: 3600
