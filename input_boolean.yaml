@@ -28,3 +28,5 @@
     initial: off
   warning_downstairs:
     initial: off
+  warning_exterior:
+    initial: off

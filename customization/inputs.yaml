@@ -27,6 +27,10 @@
     friendly_name: "Downstairs Warning"
     emulated_hue_name: "Downstairs Warning"
     emulated_hue_hidden: false
+  input_boolean.warning_exterior:
+    friendly_name: "Exterior Warning"
+    emulated_hue_name: "Exterior Warning"
+    emulated_hue_hidden: false
   
   input_number.stairs_rgb_r:
     emulated_hue_name: "Stair Color Red"

@@ -35,6 +35,7 @@
     "4": "input_boolean.kid_alarm",
     "40": "light.rgbwfrontporch",
     "41": "light.rgbwdesk",
+    "42": "input_boolean.warning_exterior",
     "5": "input_boolean.night_tv_mode",
     "6": "light.livingroomdimmer_level_9_0",
     "7": "input_slider.stairs_rgb_b",

@@ -6,6 +6,7 @@
       service: ifttt.trigger
       #data_template: {"event":"Speedtest","value1":"3","value2":"2","value3":"1"}
       data_template: {"event":"Speedtest","value1":"{{states.sensor.speedtest_ping.state}}","value2":"{{states.sensor.speedtest_download.state}}","value3":"{{states.sensor.speedtest_upload.state}}"}
+      
   - alias: "SSL Renew"
     trigger:
       - platform: state

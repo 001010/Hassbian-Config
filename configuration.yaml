@@ -136,6 +136,8 @@ device_tracker:
     username: !secret asus_username
     password: !secret asus_password
     protocol: telnet
+    interval_seconds: 15
+    consider_home: 0:10:00
 
 mqtt:
   broker: m13.cloudmqtt.com
