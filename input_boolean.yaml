@@ -30,3 +30,6 @@
     initial: off
   warning_exterior:
     initial: off
+
+  auto_bedroom_humidity:
+    initial: off

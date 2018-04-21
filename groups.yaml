@@ -149,15 +149,13 @@
     - group.nightstands
     - switch.outlet1_switch
     - group.humidifier
-    - automation.bedroom_humidity_control_on
-    - automation.bedroom_humidity_control_off
+    - input_boolean.auto_bedroom_humidity
   Garage:
     name: Garage
     view: yes
     icon: mdi:garage
     entities: 
     - cover.2car_garage_door_opener
-    #- cover.garage_door
   People:
     name: Humans
     view: yes

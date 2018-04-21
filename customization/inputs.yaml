@@ -32,6 +32,11 @@
     emulated_hue_name: "Exterior Warning"
     emulated_hue_hidden: false
   
+  input_boolean.auto_bedroom_humidity:
+    friendly_name: "Automatic Bedroom Humidity"
+    emulated_hue_name: "Automatic Bedroom Humidity"
+    emulated_hue_hidden: false
+  
   input_number.stairs_rgb_r:
     emulated_hue_name: "Stair Color Red"
     emulated_hue_hidden: false

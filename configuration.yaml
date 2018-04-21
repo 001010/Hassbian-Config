@@ -36,7 +36,7 @@ sun:
 # Enables Amazon Echo / Hue functions:
 emulated_hue:
   expose_by_default: false
-  
+    
 tradfri:
   host: !secret tradfri_ip
  
