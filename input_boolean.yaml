@@ -33,3 +33,6 @@
 
   auto_bedroom_humidity:
     initial: off
+    
+  fun_fear:
+    initial: off

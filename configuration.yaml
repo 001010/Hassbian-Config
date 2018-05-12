@@ -40,6 +40,9 @@ emulated_hue:
 tradfri:
   host: !secret tradfri_ip
  
+## Cloud
+cloud:
+## Amazon Echo
 alexa: !include alexa.yaml
 ## Groups ##
 group: !include groups.yaml
@@ -117,11 +120,13 @@ telegram_bot:
     allowed_chat_ids: !secret telegram_ids
     
 # vacuum:
-  # - platform: roomba
-    # name: Roomba
-    # host: 192.168.1.140
-    # username: BLID
-    # password: PASSWORD
+  # platform: roomba
+  # name: Roomba
+  
+  
+  # host: !secret roomba_ip
+  # username: !secret roomba_username
+  # password: !secret roomba_password
 
 # Text to speech
 tts:
@@ -140,12 +145,14 @@ device_tracker:
     consider_home: 0:10:00
 
 mqtt:
-  broker: m13.cloudmqtt.com
-  port: 14579
-  client_id: !secret mqtt_client_id
-  keepalive: 60
+  broker: !secret no-ip_domain
+  # broker: m13.cloudmqtt.com
+  # port: 14579
+  # client_id: !secret mqtt_client_id
+  # keepalive: 60
   username: !secret mqtt_username
   password: !secret mqtt_password
+  # customize: true
 
 zone:
   name: Home
@@ -173,10 +180,7 @@ logger:
   logs:
     homeassistant.components.device_tracker.mqtt: debug
 
-light:
-  platform: osramlightify
-  host: 192.168.1.130
-  scan_interval: 5
+light: !include light.yaml
 
 nest:
   client_id: !secret nest_client_id

@@ -43,9 +43,9 @@
         - name: Dimmers
           entities:
              - light.livingroomdimmer_level
+             - light.officedimmer_level
              - light.diningdimmer_level
              - light.kitchendimmer_level
-             - light.lampdimmer_level
           class_template: '
             brightness = parseFloat(entity.attributes.brightness);
             if (brightness<= 50)
@@ -60,8 +60,10 @@
               
         - name: Switches
           entities:
-             - switch.humidifier_switch
-             - switch.housefan_switch
+            - switch.frontporchlight_switch
+            - switch.outlet1_switch
+            - switch.housefan_switch
+            - switch.outdoorswitch_switch
           states:
             - state: 'on'
               class: 'switch-on'
@@ -91,7 +93,6 @@
 
         - name: Motion sensors
           entities:
-            - binary_sensor.motion_masterbedroom_sensor
             - binary_sensor.motion_upstairs_sensor
             - binary_sensor.motion_entryway_sensor
             - binary_sensor.motion_front_sensor

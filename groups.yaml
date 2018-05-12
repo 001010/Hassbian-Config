@@ -77,6 +77,7 @@
     view: yes
     icon: mdi:office
     entities:
+    - light.officedimmer_level
     - light.rgbwdesk
     - group.upstairs_sensor
     - group.entryway_sensor
@@ -85,6 +86,7 @@
     - sensor.tyler_to_work
     - sensor.kristine_to_home
     - switch.windowfan_switch
+    - group.mqtt_office_multi
   Kitchen:
     name: Kitchen
     view: yes
@@ -261,6 +263,13 @@
     entities:
     - device_tracker.kristine_bt
     - device_tracker.kristine_kristine
+  mqtt_office_multi:
+    name: Office Sensor
+    entities:
+    - sensor.office_motion
+    - sensor.office_temperature
+    - sensor.office_humidity
+    - sensor.office_heat_index
     
 ## Sun
   Sun_Center:

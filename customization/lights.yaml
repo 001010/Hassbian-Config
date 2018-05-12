@@ -18,6 +18,10 @@
     friendly_name: "Living Room Lights"
     emulated_hue_name: "living room light"
     emulated_hue_hidden: false
+  light.officedimmer_level:
+    friendly_name: "Office Lights"
+    emulated_hue_name: "office light"
+    emulated_hue_hidden: false
 
 #Tradfri
   light.kristines_night_stand:
