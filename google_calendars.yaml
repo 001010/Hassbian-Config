@@ -22,3 +22,9 @@
   - device_id: contacts
     name: Contacts
     track: false
+
+- cal_id: family04968600899657909855@group.calendar.google.com
+  entities:
+  - device_id: family
+    name: Family
+    track: true

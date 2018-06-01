@@ -118,6 +118,7 @@
     view: yes
     icon: mdi:pine-tree-box
     entities:
+    - group.sun_center
     - switch.frontporchlight_switch
     - sensor.pws_temp_f
     - sensor.pws_relative_humidity
