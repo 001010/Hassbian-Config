@@ -76,16 +76,16 @@
     destination: zone.home
     
 #Fitbit
-  - platform: fitbit
-    name: fitbit1
-    clock_format: 12H
-    monitored_resources:
-      - "body/weight"
-      - "activities/heart"
-      - "activities/tracker/steps"
-      - "activities/calories"
-      - "activities/tracker/activityCalories"
-      - "activities/tracker/calories"
+  # - platform: fitbit
+    # name: fitbit1
+    # clock_format: 12H
+    # monitored_resources:
+      # - "body/weight"
+      # - "activities/heart"
+      # - "activities/tracker/steps"
+      # - "activities/calories"
+      # - "activities/tracker/activityCalories"
+      # - "activities/tracker/calories"
 
 ## MQTTs
   - platform: mqtt
