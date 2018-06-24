@@ -385,7 +385,7 @@
        y="65.846581" />
     <rect
        style="opacity:1;fill:#999999;stroke:none;stroke-width:0.10997487;stroke-opacity:1"
-       id="binary_sensor.multisensore_sensor"
+       id="binary_sensor.motion_entryway_sensor"
        width="33.298035"
        height="48.823067"
        x="25.478613"
@@ -421,7 +421,7 @@
        y="107.09057" />
     <rect
        style="opacity:1;fill:#552200;fill-opacity:1;stroke:#000000;stroke-width:0.211;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="binary_sensor.multisensorf_sensor"
+       id="binary_sensor.motion_front_sensor"
        width="22.328251"
        height="15.846927"
        x="38.468681"
@@ -648,7 +648,7 @@
        transform="matrix(-0.00243411,-0.99999704,0.99999996,-2.7907432e-4,0,0)" />
     <rect
        style="opacity:1;fill:#e6e6e6;stroke:none;stroke-width:0.26781991;stroke-opacity:1"
-       id="binary_sensor.bedroomsensor_sensor"
+       id="binary_sensor.motion_bedroom_sensor"
        width="33.208237"
        height="31.150259"
        x="94.317787"
@@ -656,7 +656,7 @@
        inkscape:label="#rect6326" />
     <rect
        style="opacity:1;fill:#e6e6e6;stroke:none;stroke-width:0.26543;stroke-opacity:1"
-       id="binary_sensor.multisensorb_sensor"
+       id="binary_sensor.motion_upstairs_sensor"
        width="30.027727"
        height="44.059391"
        x="97.498299"

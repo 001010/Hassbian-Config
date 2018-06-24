@@ -13,16 +13,15 @@
     trigger:
     - platform: state
       entity_id: input_number.temperature_downstairs
-#    - platform: state
-#      entity_id: sensor.motion_entryway_sensor
+    - platform: state
+      entity_id: sensor.motion_entryway_sensor
     - platform: state
       entity_id: sensor.entryway_thermostat_temperature
     action:
       service: input_number.set_value
       data_template:
         entity_id: input_number.temperature_downstairs
-        value: "{{ (((float(0))+float(states('sensor.entryway_thermostat_temperature')))/1) | round(1) }}"
-#        value: "{{ ((float(states('sensor.motion_entryway_sensor'))+float(states('sensor.entryway_thermostat_temperature')))/2) | round(1) }}"
+        value: "{{ ((float(states('sensor.motion_entryway_temperature'))+float(states('sensor.entryway_thermostat_temperature')))/2) | round(1) }}"
 
   - alias: temperature_upstairs
     trigger:
@@ -30,13 +29,11 @@
       entity_id: input_number.temperature_upstairs
     - platform: state
       entity_id: sensor.motion_upstairs_temperature
-    - platform: state
-      entity_id: sensor.motion_masterbedroom_temperature
     action:
     - service: input_number.set_value
       data_template:
         entity_id: input_number.temperature_upstairs
-        value: "{{ ((float(states('sensor.motion_upstairs_temperature'))+float(states('sensor.motion_masterbedroom_temperature')))/2) | round(1) }}"
+        value: "{{ (float(states('sensor.motion_upstairs_temperature'))) | round(1) }}"
 
   - alias: temperature_house
     trigger:
@@ -44,25 +41,22 @@
       entity_id: input_number.temperature_house
     - platform: state
       entity_id: sensor.motion_upstairs_temperature
-#    - platform: state
-#      entity_id: sensor.motion_entryway_sensor
     - platform: state
-      entity_id: sensor.motion_masterbedroom_temperature
+      entity_id: sensor.motion_entryway_sensor
     - platform: state
       entity_id: sensor.entryway_thermostat_temperature
     action:
     - service: input_number.set_value
       data_template:
         entity_id: input_number.temperature_house
-        value: "{{ ((float(states('sensor.motion_upstairs_temperature'))+float(0)+float(states('sensor.motion_masterbedroom_temperature'))+float(states('sensor.entryway_thermostat_temperature')))/3) | round(1) }}"
-#        value: "{{ ((float(states('sensor.motion_upstairs_temperature'))+float(states('sensor.motion_entryway_sensor'))+float(states('sensor.motion_masterbedroom_temperature'))+float(states('sensor.entryway_thermostat_temperature')))/4) | round(1) }}"
+        value: "{{ ((float(states('sensor.motion_upstairs_temperature'))+float(states('sensor.motion_entryway_temperature'))+float(0)+float(states('sensor.entryway_thermostat_temperature')))/3) | round(1) }}"
 
   - alias: temperature_outside
     trigger:
     - platform: state
       entity_id: input_number.temperature_outside
     - platform: state
-      entity_id: sensor.motion_upstairs_temperature
+      entity_id: sensor.motion_front_temperature
     - platform: state
       entity_id: sensor.pws_temp_f
     action:
@@ -107,7 +101,6 @@
     - service: switch.turn_on
       entity_id:
       - switch.housefan_switch
-      - switch.windowfan_switch
       
   - alias: cool_down_house_off
     trigger:
@@ -118,7 +111,6 @@
     - service: switch.turn_off
       entity_id:
       - switch.housefan_switch
-      - switch.windowfan_switch
 
   - alias: "Climate Update"
     trigger:

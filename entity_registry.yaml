@@ -1,0 +1,264 @@
+sensor.pws_wind_degrees:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,wind_degrees'
+sensor.pws_wind_dir:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,wind_dir'
+sensor.pws_feelslike_f:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,feelslike_f'
+sensor.pws_pressure_in:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,pressure_in'
+sensor.pws_precip_today_in:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,precip_today_in'
+sensor.pws_precip_1hr_in:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,precip_1hr_in'
+sensor.pws_relative_humidity:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,relative_humidity'
+sensor.pws_temp_f:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,temp_f'
+sensor.pws_dewpoint_f:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,dewpoint_f'
+sensor.pws_weather:
+  name:
+  platform: wunderground
+  unique_id: '@-122.321800,47.104100,weather'
+climate.entryway:
+  name:
+  platform: nest
+  unique_id: HlsPGaqMjiq1ghkBPaeRL5FMm3tZZP1y
+media_player.living_room:
+  name:
+  platform: sonos
+  unique_id: RINCON_5CAAFDA5050B01400
+light.kristines_night_stand:
+  name:
+  platform: tradfri
+  unique_id: light-7e1809520440005e-65540
+light.tylers_night_stand:
+  name:
+  platform: tradfri
+  unique_id: light-7e1809520440005e-65538
+light.tylers_nightstand:
+  name:
+  platform: tradfri
+  unique_id: group-7e1809520440005e-131074
+light.kristines_nightstand:
+  name:
+  platform: tradfri
+  unique_id: group-7e1809520440005e-131075
+zwave.husbzb1:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.motion_front:
+  name:
+  platform: zwave
+  unique_id: node-2
+binary_sensor.motion_front_sensor:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076463104
+sensor.motion_front_temperature:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479506
+sensor.motion_front_luminance:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479538
+sensor.motion_front_relative_humidity:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479570
+sensor.motion_front_ultraviolet:
+  name:
+  platform: zwave
+  unique_id: 2-72057594076479922
+zwave.motion_entryway:
+  name:
+  platform: zwave
+  unique_id: node-3
+sensor.motion_front_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528065
+sensor.motion_front_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528081
+sensor.motion_front_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528097
+sensor.motion_front_burglar:
+  name:
+  platform: zwave
+  unique_id: 2-72057594077528225
+binary_sensor.motion_entryway_sensor:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093240320
+sensor.motion_entryway_temperature:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093256722
+sensor.motion_entryway_luminance:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093256754
+sensor.motion_entryway_relative_humidity:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093256786
+sensor.motion_entryway_co2_level:
+  name:
+  platform: zwave
+  unique_id: 3-72057594093256978
+zwave.motion_upstairs:
+  name:
+  platform: zwave
+  unique_id: node-4
+binary_sensor.motion_upstairs_sensor:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110017536
+sensor.motion_upstairs_temperature:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110033938
+sensor.motion_upstairs_luminance:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110033970
+sensor.motion_upstairs_power:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110033986
+sensor.motion_upstairs_relative_humidity:
+  name:
+  platform: zwave
+  unique_id: 4-72057594110034002
+zwave.kitchendimmer:
+  name:
+  platform: zwave
+  unique_id: node-5
+light.kitchendimmer_level:
+  name:
+  platform: zwave
+  unique_id: 5-72057594126630913
+zwave.livingroomdimmer:
+  name:
+  platform: zwave
+  unique_id: node-6
+light.livingroomdimmer_level:
+  name:
+  platform: zwave
+  unique_id: 6-72057594143408129
+zwave.diningdimmer:
+  name:
+  platform: zwave
+  unique_id: node-7
+light.diningdimmer_level:
+  name:
+  platform: zwave
+  unique_id: 7-72057594160185345
+zwave.frontporchlight:
+  name:
+  platform: zwave
+  unique_id: node-8
+switch.frontporchlight_switch:
+  name:
+  platform: zwave
+  unique_id: 8-72057594176946176
+zwave.housefan:
+  name:
+  platform: zwave
+  unique_id: node-9
+switch.housefan_switch:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193723392
+zwave.outdoorswitch:
+  name:
+  platform: zwave
+  unique_id: node-10
+switch.outdoorswitch_switch:
+  name:
+  platform: zwave
+  unique_id: 10-72057594210500608
+zwave.outlet1:
+  name:
+  platform: zwave
+  unique_id: node-12
+switch.outlet1_switch:
+  name:
+  platform: zwave
+  unique_id: 12-72057594244055040
+zwave.officedimmer:
+  name:
+  platform: zwave
+  unique_id: node-13
+light.officedimmer_level:
+  name:
+  platform: zwave
+  unique_id: 13-72057594260848641
+zwave.watersensor:
+  name:
+  platform: zwave
+  unique_id: node-14
+sensor.watersensor_alarm_type:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854657
+sensor.watersensor_alarm_level:
+  name:
+  platform: zwave
+  unique_id: 14-72057594278854673
+sensor.watersensor_flood:
+  name:
+  platform: zwave
+  unique_id: 14-72057594279559249
+media_player.roku_yy009v221044:
+  name:
+  platform: roku
+  unique_id: YY009V221044
+media_player.play_room:
+  name:
+  platform: roku
+  unique_id: 1GN398070591
+media_player.roku_4__yy009v221044:
+  name:
+  platform: plex
+  unique_id: 3e3f44f4871d5b3d28ab4f1b9f89a216
+media_player.v30:
+  name:
+  platform: plex
+  unique_id: 3f244c41e6d6b9f6-com-plexapp-android
+media_player.chrome:
+  name:
+  platform: plex
+  unique_id: h8j8oxy3b05bba8rh4fhbf06
+media_player.chrome_2:
+  name:
+  platform: plex
+  unique_id: rl9t1t99osk8olxr
+media_player.chrome_3:
+  name:
+  platform: plex
+  unique_id: pyhvar6fvtos8t1jeldydgqfr
