@@ -262,3 +262,7 @@ media_player.chrome_3:
   name:
   platform: plex
   unique_id: pyhvar6fvtos8t1jeldydgqfr
+media_player.my_fire:
+  name:
+  platform: plex
+  unique_id: 21ccde3b67a47a92-com-plexapp-android
