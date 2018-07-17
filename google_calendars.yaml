@@ -3,13 +3,13 @@
   entities:
   - device_id: tylerrodgersgmailcom
     name: tyler.rodgers@gmail.com
-    track: false
+    track: true
 
 - cal_id: tvahsmin7gcivdfi5n07m9j300@group.calendar.google.com
   entities:
   - device_id: rodgers_family
     name: Rodgers Family
-    track: false
+    track: true
 
 - cal_id: en.usa#holiday@group.v.calendar.google.com
   entities:

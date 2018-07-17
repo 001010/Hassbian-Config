@@ -79,14 +79,19 @@
     entities:
     - light.officedimmer_level
     - light.rgbwdesk
-    - group.upstairs_sensor
-    - group.entryway_sensor
-    - group.front_porch_sensor
+    - group.office_sensors
     - sensor.tyler_to_home
     - sensor.tyler_to_work
     - sensor.kristine_to_home
     - switch.windowfan_switch
     - group.mqtt_office_multi
+  Office_Sensors:
+    name: Sensors
+    view: no
+    entities:
+    - sensor.zwave_motion_upstairs_battery
+    - sensor.zwave_motion_entryway_battery
+    - sensor.zwave_motion_front_battery
   Kitchen:
     name: Kitchen
     view: yes

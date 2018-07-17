@@ -2,7 +2,7 @@
   climate:
     name: Climate Graph
     entities:
-      - input_number.temperature_outside
+#      - input_number.temperature_outside
       - input_number.temperature_house
       - input_number.temperature_downstairs
       - input_number.temperature_upstairs

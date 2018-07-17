@@ -143,6 +143,9 @@ device_tracker:
     protocol: telnet
     interval_seconds: 15
     consider_home: 0:10:00
+  - platform: google_maps
+    username: !secret google-map-user
+    password: !secret google-map-pass
 
 mqtt:
   broker: !secret no-ip_domain
