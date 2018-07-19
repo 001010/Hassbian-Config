@@ -263,12 +263,12 @@
     name: Tyler
     entities:
     - device_tracker.tyler_bt
-    - device_tracker.tyler_tyler
+    - device_tracker.google_maps_tylerrodgersgmailcom
   track_Kristine:
     name: Kristine
     entities:
     - device_tracker.kristine_bt
-    - device_tracker.kristine_kristine
+    - device_tracker.google_maps_116743014687384426126
   mqtt_office_multi:
     name: Office Sensor
     entities:

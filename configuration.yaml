@@ -136,14 +136,18 @@ device_tracker:
   - platform: owntracks
   - platform: bluetooth_tracker
     device_id: hci0
-  - platform: asuswrt
-    host: !secret asus_host
-    username: !secret asus_username
-    password: !secret asus_password
-    protocol: telnet
-    interval_seconds: 15
-    consider_home: 0:10:00
+    new_device_defaults:
+      track_new_devices: false
+      hide_if_away: false
+  # - platform: asuswrt
+    # host: !secret asus_host
+    # username: !secret asus_username
+    # password: !secret asus_password
+    # protocol: telnet
+    # interval_seconds: 15
+    # consider_home: 0:10:00
   - platform: google_maps
+    consider_home: 0:10:00
     username: !secret google-map-user
     password: !secret google-map-pass
 

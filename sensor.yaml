@@ -32,11 +32,6 @@
 #Templates
   - platform: template
     sensors:
-      zwave_motion_masterbedroom_battery:
-        value_template: '{{ states.zwave.motion_masterbedroom.attributes.battery_level | int }}'
-        unit_of_measurement: '%'
-        friendly_name: "Battery Level"
-        icon_template: mdi:battery
       zwave_motion_upstairs_battery:
         value_template: '{{ states.zwave.motion_upstairs.attributes.battery_level | int }}'
         unit_of_measurement: '%'
@@ -62,17 +57,17 @@
   - platform: google_travel_time
     name: Tyler to Work
     api_key: !secret google_travel_api_key
-    origin: device_tracker.tyler_tyler
+    origin: device_tracker.google_maps_tylerrodgersgmailcom
     destination: zone.tylers_work
   - platform: google_travel_time
     name: Tyler to Home
     api_key: !secret google_travel_api_key
-    origin: device_tracker.tyler_tyler
+    origin: device_tracker.google_maps_tylerrodgersgmailcom
     destination: zone.home
   - platform: google_travel_time
     name: Kristine to Home
     api_key: !secret google_travel_api_key
-    origin: device_tracker.kristine_kristine
+    origin: device_tracker.google_maps_116743014687384426126
     destination: zone.home
     
 #Fitbit
