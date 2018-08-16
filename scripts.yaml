@@ -61,7 +61,7 @@
           
 
 ###############################################
-############## Interior Lights
+############## Living Room Lights
 ###############################################
 
 'night_tv_mode':
@@ -70,3 +70,25 @@
     - service: scene.turn_on
       entity_id:
         - scene.night_tv_mode
+        
+        
+###############################################
+############## Bedroom Lights
+###############################################
+
+'reminder_garbage':
+  alias: Garbage Reminder
+  sequence:
+    - service: input_select.select_option
+      entity_id: input_select.garbage_week
+      data_template:
+        option: >
+          {% if (states.input_select.garbage_week.state == "Both")%} Garbage
+          {% else%} Both
+          {% endif %}
+    - service: scene.turn_on
+      data_template:
+        entity_id: >
+          {% if (states.input_select.garbage_week.state == "Garbage")%} scene.garbage_garbage
+          {% else%} scene.garbage_both
+          {% endif %}

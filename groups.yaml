@@ -164,6 +164,13 @@
     icon: mdi:garage
     entities: 
     - cover.2car_garage_door_opener
+    - group.garbage_scenes
+  Garbage Scenes:
+    name: Garbage
+    view: no
+    entities:
+    - input_select.garbage_week
+    - script.reminder_garbage
   People:
     name: Humans
     view: yes

@@ -9,3 +9,14 @@
         - input_boolean.sexy_mode
     - service: scene.turn_on
       entity_id: scene.sexy
+
+  - alias: reminder_garbage
+    trigger:
+      platform: time
+      at: '18:00:00'
+    condition:
+      - condition: state
+        entity_id: binary_sensor.day_garbage
+        state: 'on'
+    action:
+    - service: script.reminder_garbage  

@@ -52,7 +52,7 @@
     friendly_name: "Front Tamper"
     icon: mdi:bullhorn
   sensor.zwave_motion_front_battery:
-    friendly_name: "Front Battery (AAA)"
+    friendly_name: "Front Battery (CR123)"
     icon: mdi:battery
 
   input_number.bedroom_humidity:

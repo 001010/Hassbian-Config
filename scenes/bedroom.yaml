@@ -8,3 +8,25 @@
       state: on
       rgb_color: [255,0,0]
       brightness: 50      
+      
+- name: garbage_garbage
+  entities:
+    light.kristines_night_stand:
+      state: on
+      rgb_color: [0,255,0]
+      brightness: 50
+    light.tylers_night_stand:
+      state: on
+      rgb_color: [0,255,0]
+      brightness: 50
+      
+- name: garbage_both
+  entities:
+    light.kristines_night_stand:
+      state: on
+      rgb_color: [0,0,255]
+      brightness: 50
+    light.tylers_night_stand:
+      state: on
+      rgb_color: [0,255,0]
+      brightness: 50      

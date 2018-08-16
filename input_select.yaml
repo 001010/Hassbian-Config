@@ -17,3 +17,9 @@
       - Christmas
     initial: None
     icon: mdi:gift
+  garbage_week:
+    name: Garbage Week
+    options:
+      - Garbage
+      - Both
+    icon: mdi:delete-empty
