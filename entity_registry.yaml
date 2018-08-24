@@ -49,12 +49,12 @@ sensor.pws_weather:
   platform: wunderground
   unique_id: '@-122.321800,47.104100,weather'
 climate.entryway:
-  config_entry_id:
+  config_entry_id: d0df9326d9d9414e9e9e548ed96f6c43
   name:
   platform: nest
   unique_id: HlsPGaqMjiq1ghkBPaeRL5FMm3tZZP1y
 media_player.living_room:
-  config_entry_id:
+  config_entry_id: 311f6d889ff14b2a96d29d70b6469d23
   name:
   platform: sonos
   unique_id: RINCON_5CAAFDA5050B01400
