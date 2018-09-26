@@ -19,6 +19,8 @@
     initial: off
   sexy_mode:
     initial: off
+  reset_nightstands:
+    initial: off
   stair_lights:
     initial: off
   kid_alarm:

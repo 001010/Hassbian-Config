@@ -28,3 +28,10 @@
   - device_id: family
     name: Family
     track: true
+
+- cal_id: roafave2896ve6o2p1nsb6bqls@group.calendar.google.com
+  entities:
+  - device_id: travel
+    ignore_availability: true
+    name: Travel
+    track: true

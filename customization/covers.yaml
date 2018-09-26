@@ -6,5 +6,4 @@
     friendly_name: "Garage Door"
     emulated_hue_name: "Garage Door"
     emulated_hue_hidden: false
-    icon: mdi:garage
     device_class: garage

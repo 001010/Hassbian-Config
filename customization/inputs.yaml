@@ -15,10 +15,6 @@
     emulated_hue_name: "Kid Alarm"
     emulated_hue_hidden: false
     icon: mdi:theme-light-dark
-  input_boolean.sexy_mode:
-    friendly_name: "Sexy Mode"
-    emulated_hue_name: "Sexy Mode"
-    emulated_hue_hidden: false
   input_boolean.warning_upstairs:
     friendly_name: "Upstairs Warning"
     emulated_hue_name: "Upstairs Warning"
@@ -32,9 +28,18 @@
     emulated_hue_name: "Exterior Warning"
     emulated_hue_hidden: false
   
+#Bedroom
   input_boolean.auto_bedroom_humidity:
     friendly_name: "Automatic Bedroom Humidity"
     emulated_hue_name: "Automatic Bedroom Humidity"
+    emulated_hue_hidden: false
+  input_boolean.reset_nightstands:
+    friendly_name: "ibResetNightstands"
+    emulated_hue_name: "Reset Nightstands"
+    emulated_hue_hidden: false
+  input_boolean.sexy_mode:
+    friendly_name: "Sexy Mode"
+    emulated_hue_name: "sexy mode"
     emulated_hue_hidden: false
   
   input_number.stairs_rgb_r:

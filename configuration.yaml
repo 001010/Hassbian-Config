@@ -9,7 +9,7 @@ homeassistant:
 
 recorder:
   purge_interval: 1
-  purge_keep_days: 7
+  purge_keep_days: 5
   exclude:
 #    domains:
 #      - automation
@@ -48,7 +48,7 @@ alexa: !include alexa.yaml
 group: !include groups.yaml
 ## HTTP ##
 http:
-  api_password: !secret http_password
+  #api_password: !secret http_password
   base_url: !secret http_base_url
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
@@ -86,9 +86,6 @@ binary_sensor: !include binary_sensors.yaml
 
 ## Cover ##
 cover: !include cover.yaml
-
-## Panels ##
-panel_custom: !include panel_custom.yaml
 
 ## Configurations ##
 config:
@@ -165,7 +162,7 @@ zone:
   name: Home
   latitude: !secret home_latitude
   longitude: !secret home_longitude
-  radius: 100
+  radius: 50
   icon: mdi:home
 
 zone 2:
@@ -195,9 +192,25 @@ nest:
 
 ifttt:
   key: !secret ifttt
-
-media_player:
-  - platform: sonos
+  
+sabnzbd:
+  api_key: !secret sabnzbd_api
+  host: 192.168.1.5
+  name: !secret sabnzbd_user
+  port: 9090
+  ssl: true
+  sensors:
+    - current_status
+    - speed
+    - queue_size
+    - queue_remaining
+    - disk_size
+    - disk_free
+    - queue_count
+    - day_size
+    - week_size
+    - month_size
+    - total_size  
 
 shell_command:
   ssl_renew: ~/certbot renew --standalone --preferred-challenges http-01

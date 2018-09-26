@@ -8,14 +8,17 @@
   - platform: wunderground
     api_key: !secret wunderground
     monitored_conditions:
+      - alerts
       - dewpoint_f
       - feelslike_f
       - precip_1hr_in
       - precip_today_in
       - pressure_in
+      - pressure_trend
       - relative_humidity
       - temp_f
       - weather
+      - weather_1d
       - wind_degrees
       - wind_dir
   - platform: time_date
@@ -28,7 +31,12 @@
     name: SSL expires
     unit_of_measurement: days
     scan_interval: 86400
-    command: "/usr/bin/ssl-cert-check -b -c /etc/letsencrypt/live/tylerrodgers.ddns.net/cert.pem | awk '{ print $NF }'"      
+    command: "/usr/bin/ssl-cert-check -b -c /etc/letsencrypt/live/tylerrodgers.ddns.net/cert.pem | awk '{ print $NF }'"    
+  # - platform: command_line
+    # name: CPU Temperature
+    # command: "cat /sys/class/thermal/thermal_zone0/temp"
+    # unit_of_measurement: °C
+    # value_template: '{{ value | multiply(0.001) | round(2) }}'
 #Templates
   - platform: template
     sensors:
@@ -53,22 +61,22 @@
         friendly_name: "Battery Level"
         icon_template: mdi:battery
         
-#Google Travel
-  - platform: google_travel_time
-    name: Tyler to Work
-    api_key: !secret google_travel_api_key
-    origin: device_tracker.google_maps_tylerrodgersgmailcom
-    destination: zone.tylers_work
-  - platform: google_travel_time
-    name: Tyler to Home
-    api_key: !secret google_travel_api_key
-    origin: device_tracker.google_maps_tylerrodgersgmailcom
-    destination: zone.home
-  - platform: google_travel_time
-    name: Kristine to Home
-    api_key: !secret google_travel_api_key
-    origin: device_tracker.google_maps_116743014687384426126
-    destination: zone.home
+#Google Travel ## Google now charges
+  # - platform: google_travel_time
+    # name: Tyler to Work
+    # api_key: !secret google_travel_api_key
+    # origin: device_tracker.google_maps_tylerrodgersgmailcom
+    # destination: zone.tylers_work
+  # - platform: google_travel_time
+    # name: Tyler to Home
+    # api_key: !secret google_travel_api_key
+    # origin: device_tracker.google_maps_tylerrodgersgmailcom
+    # destination: zone.home
+  # - platform: google_travel_time
+    # name: Kristine to Home
+    # api_key: !secret google_travel_api_key
+    # origin: device_tracker.google_maps_116743014687384426126
+    # destination: zone.home
     
 #Fitbit
   # - platform: fitbit

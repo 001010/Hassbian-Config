@@ -19,4 +19,21 @@
         entity_id: binary_sensor.day_garbage
         state: 'on'
     action:
-    - service: script.reminder_garbage  
+    - service: script.reminder_garbage
+    
+  - alias: reset_nightstands
+    trigger:
+      - platform: state
+        entity_id: input_boolean.reset_nightstands
+        to: 'on'
+    action:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.reset_nightstands
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.kristines_night_stand
+          - light.tylers_night_stand
+        rgb_color: [255,171,88]
+        brightness: 255

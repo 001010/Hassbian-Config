@@ -5,6 +5,8 @@ resources:
     type: js
   - url: /local/my-webfont.css
     type: css
+  - url: /local/gauge-card.js?v=1
+    type: js    
 
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
 background: center / cover no-repeat url("/background.png") fixed
@@ -13,15 +15,163 @@ background: center / cover no-repeat url("/background.png") fixed
 views:
     # View tab title.
   - title: Home
-    # Optional unique id for direct access /lovelace/${id}
     id: home
-    # Optional background (overwrites the global background).
-    background: radial-gradient(crimson, skyblue)
-    # Each view can have a different theme applied. Theme should be defined in the frontend.
+    icon: mdi:home
+    background: radial-gradient(grey, skyblue)
     theme: dark-mode
-    # The cards to show on this view.
     cards:
-        # The filter card will filter entities for their state
+      - type: picture-elements
+        image: /local/floorplan.png
+        elements:
+          - type: icon
+            icon: mdi:home
+            tap_action: navigate
+            navigation_path: /lovelace/0
+            style:
+              top: 5%
+              left: 5%
+          - type: state-label
+            entity: sensor.pws_temp_f
+            style:
+              top: 92%
+              left: 93%
+          - type: state-label
+            entity: sensor.pws_relative_humidity
+            style:
+              top: 95%
+              left: 93%
+          - type: state-label
+            entity:  sensor.pws_pressure_in
+            style:
+              top: 98%
+              left: 93%
+          # Office
+          - type: state-label
+            entity: sensor.office_temperature
+            style:
+              top: 55%
+              left: 18%
+          - type: state-icon
+            entity: light.officedimmer_level
+            style:
+              top: 48%
+              left: 21%
+          # Entry Way
+          - type: state-label
+            entity: sensor.motion_entryway_temperature
+            style:
+              top: 39%
+              left: 40%
+          - type: state-icon
+            entity: binary_sensor.motion_entryway_sensor
+            style:
+              top: 43%
+              left: 42%
+          - type: icon
+            icon: mdi:thermostat
+            entity: climate.entryway
+            style:
+              top: 50%
+              left: 41%
+          #Front Porch
+          - type: state-label
+            entity: sensor.motion_front_temperature
+            style:
+              top: 79%
+              left: 49%
+          - type: state-icon
+            entity: binary_sensor.motion_front_sensor
+            style:
+              top: 85%
+              left: 42%
+          - type: state-icon
+            entity: light.rgbwfrontporch
+            style:
+              top: 84%
+              left: 47%
+          - type: state-icon
+            entity: light.rgbwfrontgarage
+            style:
+              top: 92%
+              left: 13%
+          #Front Yard
+          - type: state-icon
+            tap_action: toggle
+            entity: switch.outdoorswitch_switch
+            style:
+              top: 95%
+              left: 47%
+          #Upstairs
+          - type: state-label
+            entity: sensor.motion_upstairs_temperature
+            style:
+              top: 34%
+              left: 83%
+          - type: state-icon
+            icon: mdi:walk
+            entity: binary_sensor.motion_upstairs_sensor
+            style:
+              top: 38%
+              left: 81.5%
+          - type: state-icon
+            icon: fan
+            tap_action: toggle
+            entity: switch.housefan_switch
+            style:
+              top: 65%
+              left: 81.5%
+          #Master Bedroom
+          - type: state-icon
+            entity: light.kristines_night_stand
+            style:
+              top: 13%
+              left: 96%
+          - type: state-icon
+            tap_action: toggle
+            entity: group.nightstands
+            style:
+              top: 19%
+              left: 96%
+          - type: state-icon
+            entity: light.tylers_night_stand
+            style:
+              top: 25%
+              left: 96%
+          #Kitchen
+          - type: state-icon
+            entity: light.kitchen_lights
+            style:
+              top: 30%
+              left: 15%
+          - type: state-icon
+            entity: light.kitchendimmer_level
+            style:
+              top: 30%
+              left: 22%
+          # Dining Room
+          - type: state-icon
+            entity: light.diningdimmer_level
+            style:
+              top: 12%
+              left: 21.5%
+          # Living Room
+          - type: state-icon
+            entity: light.livingroomdimmer_level
+            style:
+              top: 20%
+              left: 42%
+          # Garage
+          - type: state-icon
+            entity: cover.2car_garage_door_opener
+            style:
+              top: 85%
+              left: 26%
+      - type: map
+        aspect_ratio: 65%
+        entities:
+          - device_tracker.google_maps_tylerrodgersgmailcom
+          - device_tracker.google_maps_116743014687384426126
+          - zone.home
       - type: entity-filter
         entities:
           - device_tracker.google_maps_tylerrodgersgmailcom
@@ -30,4 +180,24 @@ views:
           - 'home'
         card:
           type: glance
-          title: Trackers
+          title: Humans
+  - title: Data
+    id: data
+    icon: mdi:lan-connect
+    background: radial-gradient(grey, skyblue)
+    theme: dark-mode
+    cards:
+    - type: custom:gauge-card
+      title: Download
+      entity: sensor.speedtest_download
+      min: 0
+      max: 450
+      severity:
+        red: 100
+        amber: 150      
+        green: 200
+    - type: custom:gauge-card
+      title: Upload
+      entity: sensor.speedtest_upload
+      min: 0
+      max: 80

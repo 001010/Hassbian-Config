@@ -5,10 +5,14 @@
     entities:
     - group.Date_Time
     - group.sun_center
+    - sensor.pws_alerts
     - sensor.pws_temp_f
     - sensor.pws_relative_humidity
     - sensor.pws_weather
     - sensor.pws_pressure_in
+    - sensor.pws_pressure_trend
+    - sensor.pws_weather_1d
+    - sensor.cpu_temperature
     - group.people
     - group.climate
     - group.downstairs

@@ -38,6 +38,8 @@
     "42": "input_boolean.warning_exterior",
     "43": "input_boolean.auto_bedroom_humidity",
     "44": "light.officedimmer_level",
+    "45": "input_boolean.reset_lights",
+    "46": "input_boolean.reset_nightstands",
     "5": "input_boolean.night_tv_mode",
     "6": "light.livingroomdimmer_level_9_0",
     "7": "input_slider.stairs_rgb_b",
