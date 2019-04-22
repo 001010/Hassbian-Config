@@ -14,10 +14,62 @@ background: center / cover no-repeat url("/background.png") fixed
 
 views:
     # View tab title.
+  - title: Cameras
+    id: cams
+    icon: mdi:camera-iris
+    background: radial-gradient(grey, black)
+    theme: dark-mode
+    type: horizontal-stack
+    cards:
+      - type: picture-glance
+        title: Front Yard
+        entities:
+          - sensor.motion_front_temperature
+          - switch.frontporchlight_switch
+          - light.rgbwfrontgarage
+        camera_image: camera.front1
+      - type: picture-glance
+        title: Garage
+        entities: []
+        camera_image: camera.garage_cam
+  - title: Climate
+    id: climate
+    icon: mdi:oil-temperature
+    background: radial-gradient(grey, black)
+    theme: dark-mode
+    cards:
+      - type: history-graph
+        title: Climates
+        entities:
+        - sensor.pws_temp_f
+        - input_number.temperature_downstairs
+        - input_number.temperature_upstairs
+        - input_number.temperature_house
+        - input_number.temperature_outside
+      - type: vertical-stack
+        cards:
+        - type: thermostat
+          entity: climate.entryway
+        - type: horizontal-stack
+          cards:
+          - type: sensor
+            entity: sensor.motion_front_temperature
+            name: Front Porch
+          - type: sensor
+            entity: sensor.motion_entryway_temperature
+            name: Entryway
+        - type: horizontal-stack
+          cards:
+          - type: sensor
+            entity: sensor.motion_upstairs_temperature
+            name: Upstairs Hall
+          - type: sensor
+            entity: sensor.office_temperature
+            name: Office Temp
   - title: Home
     id: home
     icon: mdi:home
-    background: radial-gradient(grey, skyblue)
+    background: radial-gradient(grey, black)
     theme: dark-mode
     cards:
       - type: picture-elements
@@ -172,32 +224,44 @@ views:
           - device_tracker.google_maps_tylerrodgersgmailcom
           - device_tracker.google_maps_116743014687384426126
           - zone.home
-      - type: entity-filter
-        entities:
-          - device_tracker.google_maps_tylerrodgersgmailcom
-          - device_tracker.google_maps_116743014687384426126
-        state_filter:
-          - 'home'
-        card:
-          type: glance
-          title: Humans
   - title: Data
     id: data
     icon: mdi:lan-connect
-    background: radial-gradient(grey, skyblue)
+    background: radial-gradient(grey, black)
     theme: dark-mode
     cards:
-    - type: custom:gauge-card
-      title: Download
-      entity: sensor.speedtest_download
-      min: 0
-      max: 450
-      severity:
-        red: 100
-        amber: 150      
-        green: 200
-    - type: custom:gauge-card
-      title: Upload
-      entity: sensor.speedtest_upload
-      min: 0
-      max: 80
+    - type: history-graph
+      title: Speedtests
+      entities:
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+  - title: Lights
+    id: lights
+    icon: mdi:lightbulb
+    background: radial-gradient(grey, black)
+    theme: dark-mode
+    cards:
+    - type: light
+      entity: light.kitchendimmer_level
+    - type: light
+      entity: light.diningdimmer_level
+    - type: light
+      entity: light.livingroomdimmer_level
+    - type: light
+      entity: light.officedimmer_level
+    - type: entity-button
+      entity: switch.frontporchlight_switch
+    - type: light
+      entity: light.rgbwfrontporch
+    - type: light
+      entity: light.rgbwfrontgarage
+    - type: entity-button
+      entity: switch.outdoorswitch_switch
+    - type: entity-button
+      entity: switch.outdoorswitch2_switch
+    - type: light
+      entity: light.kristines_night_stand
+    - type: light
+      entity: light.tylers_night_stand
+    - type: entity-button
+      entity: switch.bathroomheater_switch

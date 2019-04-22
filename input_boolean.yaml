@@ -36,5 +36,5 @@
   auto_bedroom_humidity:
     initial: off
     
+  holiday_lights:
   fun_fear:
-    initial: off

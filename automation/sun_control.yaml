@@ -108,6 +108,10 @@
     trigger:
       platform: sun
       event: sunset
+    condition:
+      - condition: state
+        entity_id: input_boolean.holiday_lights
+        state: 'on'
     action:
       - service: switch.turn_on
         entity_id:

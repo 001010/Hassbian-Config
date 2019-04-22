@@ -22,6 +22,8 @@
 
   - name: frontlights_normal
     entities:
+      switch.outdoorswitch_switch:
+        state: off
       light.rgbwfrontporch:
         state: on
         brightness: 255
@@ -31,82 +33,4 @@
         state: on
         brightness: 255
         transition: 1
-        kelvin: 2800
-
-  - name: frontlights_valentines
-    entities:
-      light.rgbwfrontporch:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'hotpink'
-      light.rgbwfrontgarage:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'deeppink'
-        
-  - name: frontlights_stpattys
-    entities:
-      light.rgbwfrontporch:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'lime'
-      light.rgbwfrontgarage:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'darkgreen'
-        
-  - name: frontlights_july4th
-    entities:
-      light.rgbwfrontporch:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'Blue'
-      light.rgbwfrontgarage:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'Red'
-
-  - name: frontlights_halloween
-    entities:
-      light.rgbwfrontporch:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'Orange'
-      light.rgbwfrontgarage:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'Purple'
-        
-  - name: frontlights_thanksgiving
-    entities:
-      light.rgbwfrontporch:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'Yellow'
-      light.rgbwfrontgarage:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'Orange'
-
-  - name: frontlights_christmas
-    entities:
-      light.rgbwfrontporch:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'Green'
-      light.rgbwfrontgarage:
-        state: on
-        brightness: 255
-        transition: 1
-        color_name: 'Red'
+        kelvin: 2800        

@@ -1,1 +1,8 @@
-[]
+- id: '1549427198514'
+  alias: New Automation
+  trigger:
+  - at: 06:30
+    platform: time
+  condition: []
+  action:
+  - service: switch.turn_on

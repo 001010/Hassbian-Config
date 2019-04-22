@@ -3,6 +3,10 @@
       - platform: state
         entity_id: input_boolean.phase_day
         to: 'on'
+    condition:
+      - condition: state
+        entity_id: binary_sensor.home_away
+        state: 'on'
     action:
     - service: scene.turn_on
       entity_id:

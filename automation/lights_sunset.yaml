@@ -1,8 +1,14 @@
+
+## Indoors Sunset
   - alias: sunset
     trigger:
       - platform: state
         entity_id: input_boolean.phase_evening
         to: 'on'
+    condition:
+      - condition: state
+        entity_id: binary_sensor.home_away
+        state: 'on'
     action:
     - service: scene.turn_on
       entity_id:
@@ -11,6 +17,7 @@
       entity_id:
         - scene.sunset
         
+## Outdoors Sunset
   - alias: motion_front_on
     trigger:
       - platform: state
@@ -26,6 +33,48 @@
     - service: scene.turn_on
       entity_id: scene.frontlights_normal_porch
       
+  - alias: motion_front_on
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_front_sensor
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: switch.frontporchlight_switch
+        state: 'on'
+      - condition: template
+        value_template: '{{ states.input_select.holiday != "None" }}'
+      - condition: state
+        entity_id: input_boolean.fun_fear
+        state: 'off'
+    action:
+    - service: scene.turn_on
+      entity_id: scene.frontlights_normal_porch
+      
+  - alias: motion_front_on_fun_fear
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_front_sensor
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: switch.frontporchlight_switch
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.fun_fear
+        state: 'on'
+    action:
+    - service: scene.turn_on
+      entity_id: scene.frontlights_fun_fear
+    - delay: '00:00:05'
+    - service: switch.turn_on
+      entity_id: switch.outdoorswitch2_switch
+    - delay: '00:00:05'
+    - service: switch.turn_off
+      entity_id: switch.outdoorswitch2_switch
+    - delay: '00:00:20'
+    - service: script.front_lights
+
   - alias: motion_front_off
     trigger:
       - platform: state

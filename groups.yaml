@@ -115,10 +115,13 @@
     - light.rgbwfrontgarage
     - switch.frontporchlight_switch
     - switch.outdoorswitch_switch
+    - switch.outdoorswitch2_switch
   Front Porch Scenes:
     name: Front Porch Scenes
     view: no
     entities:
+    - input_boolean.fun_fear
+    - input_boolean.holiday_lights
     - input_select.holiday
     - script.holiday
     - script.front_lights
@@ -127,6 +130,7 @@
     view: yes
     icon: mdi:pine-tree-box
     entities:
+    - camera.front1
     - group.sun_center
     - switch.frontporchlight_switch
     - sensor.pws_temp_f
@@ -162,11 +166,19 @@
     - switch.outlet1_switch
     - group.humidifier
     - input_boolean.auto_bedroom_humidity
+    - switch.bathroomheater_switch
+  Master Bathroom:
+    name: Master Bathroom
+    view: yes
+    icon: mdi:scale-bathroom
+    entities:
+    - switch.bathroomheater_switch
   Garage:
     name: Garage
     view: yes
     icon: mdi:garage
     entities: 
+    - camera.garage_cam
     - cover.2car_garage_door_opener
     - group.garbage_scenes
   Garbage Scenes:
@@ -317,6 +329,7 @@
     name: Online
     entities:
     - binary_sensor.ping_maxx
+    - binary_sensor.ping_maxxnas
     - binary_sensor.ping_pihole
     - binary_sensor.ping_lightify
     - binary_sensor.ping_tradfri

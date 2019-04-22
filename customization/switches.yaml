@@ -27,3 +27,8 @@
     emulated_hue_name: "front porch lights"
     emulated_hue_hidden: false
     icon: mdi:theme-light-dark
+  switch.bathroomheater_switch:
+    friendly_name: "Bathroom Heater"
+    emulated_hue_name: "Bathroom Heater"
+    emulated_hue_hidden: false
+    icon: mdi:radiator

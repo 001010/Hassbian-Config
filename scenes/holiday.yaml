@@ -1,0 +1,94 @@
+## Color Names - https://www.w3.org/TR/2010/PR-css3-color-20101028/#svg-color
+
+## "Fun Fear" - Turn Front Lights On RED when front motion is detected.
+  - name: frontlights_fun_fear
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'red'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'red'
+
+## Holidays
+  - name: frontlights_valentines
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'red'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'deeppink'
+        
+  - name: frontlights_stpattys
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'lime'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'darkgreen'
+        
+  - name: frontlights_july4th
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Blue'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Red'
+
+  - name: frontlights_halloween
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Green'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Purple'
+        
+  - name: frontlights_thanksgiving
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Yellow'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Orange'
+
+  - name: frontlights_christmas
+    entities:
+      light.rgbwfrontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Red'
+      light.rgbwfrontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'Green'

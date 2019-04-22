@@ -14,7 +14,7 @@
     - platform: state
       entity_id: input_number.temperature_downstairs
     - platform: state
-      entity_id: sensor.motion_entryway_sensor
+      entity_id: sensor.motion_entryway_temperature
     - platform: state
       entity_id: sensor.entryway_thermostat_temperature
     action:
@@ -42,7 +42,7 @@
     - platform: state
       entity_id: sensor.motion_upstairs_temperature
     - platform: state
-      entity_id: sensor.motion_entryway_sensor
+      entity_id: sensor.motion_entryway_temperature
     - platform: state
       entity_id: sensor.entryway_thermostat_temperature
     action:
@@ -57,8 +57,6 @@
       entity_id: input_number.temperature_outside
     - platform: state
       entity_id: sensor.motion_front_temperature
-    - platform: state
-      entity_id: sensor.pws_temp_f
     action:
     - service: input_number.set_value
       data_template:

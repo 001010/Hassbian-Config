@@ -39,7 +39,7 @@ emulated_hue:
     
 tradfri:
   host: !secret tradfri_ip
- 
+  allow_tradfri_groups: true
 ## Cloud
 cloud:
 ## Amazon Echo
@@ -214,3 +214,14 @@ sabnzbd:
 
 shell_command:
   ssl_renew: ~/certbot renew --standalone --preferred-challenges http-01
+  
+###### IP Cameras
+ffmpeg:
+ 
+camera:
+  - platform: ffmpeg
+    name: Garage Cam
+    input: !secret camera1_url
+  - platform: ffmpeg
+    name: Front1
+    input: !secret camera2_url
