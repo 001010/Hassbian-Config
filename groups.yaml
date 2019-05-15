@@ -215,7 +215,20 @@
     entities:
     - script.update_all_temp_sheet
     
-## Devices
+  ## Lovelace-UI
+  downstairs_lights:
+    entities:
+    - light.kitchendimmer_level
+    - light.diningdimmer_level
+    - light.livingroomdimmer_level
+  outside_lights:
+    entities:
+    - switch.frontporchlight_switch
+    - light.rgbwfrontporch
+    - light.rgbwfrontgarage
+    - switch.outdoorswitch_switch
+    
+    ## Devices
   Nest:
     entities:
     - sensor.entryway_thermostat_temperature

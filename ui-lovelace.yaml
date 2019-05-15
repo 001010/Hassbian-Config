@@ -14,6 +14,7 @@ background: center / cover no-repeat url("/background.png") fixed
 
 views:
     # View tab title.
+
   - title: Cameras
     id: cams
     icon: mdi:camera-iris
@@ -218,12 +219,29 @@ views:
             style:
               top: 85%
               left: 26%
+      - type: entities
+        title: Humans
+        show_header_toggle: true
+        entities:
+        - group.people
       - type: map
         aspect_ratio: 65%
         entities:
           - device_tracker.google_maps_tylerrodgersgmailcom
           - device_tracker.google_maps_116743014687384426126
           - zone.home
+      - type: iframe
+        url: https://embed.windy.com/embed2.html?lat=46.838&lon=-122.503&zoom=7&level=surface&overlay=wind&menu=&message=true&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=47.101&detailLon=-122.318&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1
+        aspect_ratio: 50%
+      - type: thermostat
+        entity: climate.entryway
+      - type: entities
+        title: Lights
+        show_header_toggle: true
+        entities:
+        - group.downstairs_lights
+        - group.outside_lights
+        
   - title: Data
     id: data
     icon: mdi:lan-connect

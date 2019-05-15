@@ -85,7 +85,11 @@ input_select: !include input_select.yaml
 binary_sensor: !include binary_sensors.yaml
 
 ## Cover ##
-cover: !include cover.yaml
+cover:
+  - platform: myq
+    username: !secret myq_username
+    password: !secret myq_password
+    type: chamberlain
 
 ## Configurations ##
 config:
@@ -221,7 +225,7 @@ ffmpeg:
 camera:
   - platform: ffmpeg
     name: Garage Cam
-    input: !secret camera1_url
+    input: !secret garage_cam_url
   - platform: ffmpeg
     name: Front1
-    input: !secret camera2_url
+    input: !secret front1_cam_url

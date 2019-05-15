@@ -91,3 +91,6 @@
           {% if (states.input_select.garbage_week.state == "Garbage")%} scene.garbage_garbage
           {% else%} scene.garbage_both
           {% endif %}
+    - service: notify.telegram
+      data:
+        message: "Take out the garbage."
