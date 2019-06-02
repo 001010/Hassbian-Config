@@ -3,6 +3,8 @@
 # Binary Sensors  
   binary_sensor.ping_maxx:
     friendly_name: "Maxx"
+  binary_sensor.ping_maxxnas:
+    friendly_name: "MaxxNAS"
   binary_sensor.ping_pihole:
     friendly_name: "PiHole"
   binary_sensor.ping_tradfri:

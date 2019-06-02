@@ -75,6 +75,7 @@
     icon: mdi:numeric-2-box
     entities:
     - group.upstairs_sensor
+    - input_boolean.warning_upstairs
     - switch.housefan_switch
   Office:
     name: Office

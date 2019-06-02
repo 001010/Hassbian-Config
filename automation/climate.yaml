@@ -61,7 +61,7 @@
     - service: input_number.set_value
       data_template:
         entity_id: input_number.temperature_outside
-        value: "{{ ((float(states('sensor.motion_front_temperature'))+float(states('sensor.pws_temp_f')))/2) | round(1) }}"
+        value: "{{ ((float(states('sensor.motion_front_temperature'))+float(states('sensor.owm_temperature')))/2) | round(1) }}"
 
   - alias: outside_warmer
     trigger:

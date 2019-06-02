@@ -1,3 +1,4 @@
+#SpeedTest/Network
   - platform: speedtest
     minute:
       - 12
@@ -17,6 +18,21 @@
     scan_interval: 86400
     command: "/usr/bin/ssl-cert-check -b -c /etc/letsencrypt/live/tylerrodgers.ddns.net/cert.pem | awk '{ print $NF }'"    
 
+# Weather
+  - platform: openweathermap
+    api_key: 625212de70edfabcf8340924fc622e01
+    monitored_conditions:
+      - weather
+      - temperature
+      - humidity
+      - pressure
+      - wind_speed
+      - wind_bearing
+      - clouds
+      - rain
+      - snow
+      - weather_code
+    
 #Templates
   - platform: template
     sensors:

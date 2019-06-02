@@ -84,17 +84,17 @@ views:
               top: 5%
               left: 5%
           - type: state-label
-            entity: sensor.pws_temp_f
+            entity: sensor.owm_temperature
             style:
               top: 92%
               left: 93%
           - type: state-label
-            entity: sensor.pws_relative_humidity
+            entity: sensor.owm_humidity
             style:
               top: 95%
               left: 93%
           - type: state-label
-            entity:  sensor.pws_pressure_in
+            entity:  sensor.owm_pressure
             style:
               top: 98%
               left: 93%

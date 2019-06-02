@@ -66,7 +66,7 @@
   sensor.zwave_watersensor_battery:
     friendly_name: "Leak Battery (AAA)"
     icon: mdi:battery
-    
+
 #Network
   sensor.speedtest_ping:
     friendly_name: "Network Ping"

@@ -93,4 +93,7 @@
           {% endif %}
     - service: notify.telegram
       data:
-        message: "Take out the garbage."
+        message: "
+        {% if is_state('input_select.garbage_week', 'Garbage') %}It's time to take out the garbage.
+        {% else %}It's time to take out the Garbage and Recycle.
+        {% endif %}"

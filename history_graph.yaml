@@ -2,17 +2,16 @@
   climate:
     name: Climate Graph
     entities:
-#      - input_number.temperature_outside
+      - input_number.temperature_outside
       - input_number.temperature_house
       - input_number.temperature_downstairs
       - input_number.temperature_upstairs
-      - sensor.pws_temp_f
-    hours_to_show: 120
+    hours_to_show: 72
     refresh: 3600
   speedtest:
     name: Comcast Speedtests
     entities:
       - sensor.speedtest_download
       - sensor.speedtest_upload
-    hours_to_show: 72
+    hours_to_show: 48
     refresh: 3600    
