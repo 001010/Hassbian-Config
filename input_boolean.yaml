@@ -36,5 +36,14 @@
   auto_bedroom_humidity:
     initial: off
     
+  zwave_motion_entryway_battery_low:
+    initial: off
+  zwave_motion_front_battery_low:
+    initial: off
+  zwave_motion_upstairs_battery_low:
+    initial: off
+  zwave_motion_watersensor_battery_low:
+    initial: off
+
   holiday_lights:
   fun_fear:

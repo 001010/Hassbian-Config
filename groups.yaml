@@ -68,7 +68,8 @@
     - group.living_room
     - group.entryway
     - climate.entryway
-    - group.entryway_sensor
+    - lock.kwikset_garage_locked
+    - group.lock_Garage
     - group.stair_lights
   Upstairs:
     view: yes
@@ -313,6 +314,11 @@
     - sensor.office_temperature
     - sensor.office_humidity
     - sensor.office_heat_index
+  lock_Garage:
+    name: Garage Door
+    entities:
+    - sensor.kwikset_garage_access_control
+    - sensor.kwikset_garage_power_management
     
 ## Sun
   Sun_Center:

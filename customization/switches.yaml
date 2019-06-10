@@ -18,8 +18,8 @@
     emulated_hue_hidden: false
     icon: mdi:fan
   switch.outlet1_switch:
-    friendly_name: "Humidifier"
-    emulated_hue_name: "humidifier"
+    friendly_name: "Front Camera"
+    emulated_hue_name: "front camera"
     emulated_hue_hidden: false
     icon: mdi:power-plug
   switch.frontporchlight_switch:

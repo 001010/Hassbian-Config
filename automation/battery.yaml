@@ -1,0 +1,19 @@
+## Battery
+  - alias: "Entryway Low"
+    trigger:
+    - platform: state
+      entity_id: sensor.zwave_motion_entryway_battery
+      below: 20
+    action:
+    - service: input_boolean.turn_on
+      entity_id:
+        - input_boolean.zwave_motion_entryway_battery_low
+  - alias: "Entryway Replaced"
+    trigger:
+    - platform: state
+      entity_id: sensor.zwave_motion_entryway_battery
+      above: 50
+    action:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.zwave_motion_entryway_battery_low

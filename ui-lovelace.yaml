@@ -15,58 +15,6 @@ background: center / cover no-repeat url("/background.png") fixed
 views:
     # View tab title.
 
-  - title: Cameras
-    id: cams
-    icon: mdi:camera-iris
-    background: radial-gradient(grey, black)
-    theme: dark-mode
-    type: horizontal-stack
-    cards:
-      - type: picture-glance
-        title: Front Yard
-        entities:
-          - sensor.motion_front_temperature
-          - switch.frontporchlight_switch
-          - light.rgbwfrontgarage
-        camera_image: camera.front1
-      - type: picture-glance
-        title: Garage
-        entities: []
-        camera_image: camera.garage_cam
-  - title: Climate
-    id: climate
-    icon: mdi:oil-temperature
-    background: radial-gradient(grey, black)
-    theme: dark-mode
-    cards:
-      - type: history-graph
-        title: Climates
-        entities:
-        - sensor.pws_temp_f
-        - input_number.temperature_downstairs
-        - input_number.temperature_upstairs
-        - input_number.temperature_house
-        - input_number.temperature_outside
-      - type: vertical-stack
-        cards:
-        - type: thermostat
-          entity: climate.entryway
-        - type: horizontal-stack
-          cards:
-          - type: sensor
-            entity: sensor.motion_front_temperature
-            name: Front Porch
-          - type: sensor
-            entity: sensor.motion_entryway_temperature
-            name: Entryway
-        - type: horizontal-stack
-          cards:
-          - type: sensor
-            entity: sensor.motion_upstairs_temperature
-            name: Upstairs Hall
-          - type: sensor
-            entity: sensor.office_temperature
-            name: Office Temp
   - title: Home
     id: home
     icon: mdi:home
@@ -109,7 +57,7 @@ views:
             style:
               top: 48%
               left: 21%
-          # Entry Way
+########### Entry Way
           - type: state-label
             entity: sensor.motion_entryway_temperature
             style:
@@ -126,7 +74,13 @@ views:
             style:
               top: 50%
               left: 41%
-          #Front Porch
+          - type: state-icon
+            tap_action: toggle
+            entity: lock.kwikset_garage_locked
+            style:
+              top: 60%
+              left: 36%          
+##########Front Porch
           - type: state-label
             entity: sensor.motion_front_temperature
             style:
@@ -241,7 +195,58 @@ views:
         entities:
         - group.downstairs_lights
         - group.outside_lights
-        
+  - title: Cameras
+    id: cams
+    icon: mdi:camera-iris
+    background: radial-gradient(grey, black)
+    theme: dark-mode
+    type: horizontal-stack
+    cards:
+      - type: picture-glance
+        title: Front Yard
+        entities:
+          - sensor.motion_front_temperature
+          - switch.frontporchlight_switch
+          - light.rgbwfrontgarage
+        camera_image: camera.front1
+      - type: picture-glance
+        title: Garage
+        entities: []
+        camera_image: camera.garage_cam
+  - title: Climate
+    id: climate
+    icon: mdi:oil-temperature
+    background: radial-gradient(grey, black)
+    theme: dark-mode
+    cards:
+      - type: history-graph
+        title: Climates
+        entities:
+        - sensor.pws_temp_f
+        - input_number.temperature_downstairs
+        - input_number.temperature_upstairs
+        - input_number.temperature_house
+        - input_number.temperature_outside
+      - type: vertical-stack
+        cards:
+        - type: thermostat
+          entity: climate.entryway
+        - type: horizontal-stack
+          cards:
+          - type: sensor
+            entity: sensor.motion_front_temperature
+            name: Front Porch
+          - type: sensor
+            entity: sensor.motion_entryway_temperature
+            name: Entryway
+        - type: horizontal-stack
+          cards:
+          - type: sensor
+            entity: sensor.motion_upstairs_temperature
+            name: Upstairs Hall
+          - type: sensor
+            entity: sensor.office_temperature
+            name: Office Temp
   - title: Data
     id: data
     icon: mdi:lan-connect
