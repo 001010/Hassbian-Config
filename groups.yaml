@@ -69,7 +69,6 @@
     - group.entryway
     - climate.entryway
     - lock.kwikset_garage_locked
-    - group.lock_Garage
     - group.stair_lights
   Upstairs:
     view: yes
@@ -142,6 +141,12 @@
     - group.front_porch_lights
     - group.front_porch_sensor
     - group.front_porch_scenes
+  Garden:
+    name: Garden
+    view: yes
+    icon: mdi:leaf
+    entities:
+    - plant.garden_earlygirl
   Stairs:
     name: Stairs
     view: yes
@@ -281,32 +286,11 @@
     icon: mdi:stairs
     entities:
     - light.rgbw_stairs
-  # Plant0:
-    # name: Plant
-    # entities:
-    # - sensor.Plant0_name
-    # - sensor.Plant0_status
-    # - sensor.Plant0_fuel
-    # - sensor.Plant0_moisture
-    # - sensor.Plant0_signal
-    # - sensor.Plant0_battery
-    # - sensor.plant0_next_water
-    # - sensor.Plant0_last_updated
   Humidifer:
     icon: mdi:water
     entities:
     - switch.humidifier_switch
     - sensor.watersensor_flood
-  track_Tyler:
-    name: Tyler
-    entities:
-    - device_tracker.tyler_bt
-    - device_tracker.google_maps_tylerrodgersgmailcom
-  track_Kristine:
-    name: Kristine
-    entities:
-    - device_tracker.kristine_bt
-    - device_tracker.google_maps_116743014687384426126
   mqtt_office_multi:
     name: Office Sensor
     entities:

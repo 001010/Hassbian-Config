@@ -1,0 +1,4 @@
+# Plants Customization
+  plant.garden_earlygirl:
+      friendly_name: Early Girl Tomato
+      icon: mdi:leaf

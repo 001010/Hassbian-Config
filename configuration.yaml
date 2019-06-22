@@ -133,6 +133,8 @@ telegram_bot:
 tts:
   platform: google
 
+person: !include people.yaml
+
 device_tracker:
   - platform: owntracks
   - platform: bluetooth_tracker
@@ -229,3 +231,5 @@ camera:
   - platform: ffmpeg
     name: Front1
     input: !secret front1_cam_url
+
+plant: !include plant.yaml

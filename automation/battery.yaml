@@ -1,19 +1,132 @@
 ## Battery
-  - alias: "Entryway Low"
+  ## Entryway
+  - alias: "Battery Entryway Low"
     trigger:
-    - platform: state
+    - platform: numeric_state
       entity_id: sensor.zwave_motion_entryway_battery
+      value_template: '{{ states.sensor.zwave_motion_entryway_battery.state }}'
       below: 20
     action:
     - service: input_boolean.turn_on
       entity_id:
         - input_boolean.zwave_motion_entryway_battery_low
-  - alias: "Entryway Replaced"
+        
+  - alias: "Battery Entryway Replaced"
     trigger:
-    - platform: state
+    - platform: numeric_state
       entity_id: sensor.zwave_motion_entryway_battery
+      value_template: '{{ states.sensor.zwave_motion_entryway_battery.state }}'
       above: 50
     action:
     - service: input_boolean.turn_off
       entity_id:
         - input_boolean.zwave_motion_entryway_battery_low
+        
+  - alias: "Battery Entryway Notify"
+    trigger:
+    - platform: state
+      entity_id: input_boolean.zwave_motion_entryway_battery_low
+      to: 'on'
+    action:
+    - service: notify.telegram
+      data:
+        message: "Entry Motion battery is low."
+        
+  ## Upstairs
+  - alias: "Battery Upstairs Low"
+    trigger:
+    - platform: numeric_state
+      entity_id: sensor.zwave_motion_upstairs_battery
+      value_template: '{{ states.sensor.zwave_motion_upstairs_battery.state }}'
+      below: 20
+    action:
+    - service: input_boolean.turn_on
+      entity_id:
+        - input_boolean.zwave_motion_upstairs_battery_low
+        
+  - alias: "Battery Upstairs Replaced"
+    trigger:
+    - platform: numeric_state
+      entity_id: sensor.zwave_motion_upstairs_battery
+      value_template: '{{ states.sensor.zwave_motion_upstairs_battery.state }}'
+      above: 50
+    action:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.zwave_motion_upstairs_battery_low
+        
+  - alias: "Battery Upstairs Notify"
+    trigger:
+    - platform: state
+      entity_id: input_boolean.zwave_motion_upstairs_battery_low
+      to: 'on'
+    action:
+    - service: notify.telegram
+      data:
+        message: "Upstairs Motion battery is low."
+        
+  ## Front
+  - alias: "Battery Front Low"
+    trigger:
+    - platform: numeric_state
+      entity_id: sensor.zwave_motion_front_battery
+      value_template: '{{ states.sensor.zwave_motion_front_battery.state }}'
+      below: 20
+    action:
+    - service: input_boolean.turn_on
+      entity_id:
+        - input_boolean.zwave_motion_front_battery_low
+        
+  - alias: "Battery Front Replaced"
+    trigger:
+    - platform: numeric_state
+      entity_id: sensor.zwave_motion_front_battery
+      value_template: '{{ states.sensor.zwave_motion_front_battery.state }}'
+      above: 50
+    action:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.zwave_motion_front_battery_low
+        
+  - alias: "Battery Front Notify"
+    trigger:
+    - platform: state
+      entity_id: input_boolean.zwave_motion_front_battery_low
+      to: 'on'
+    action:
+    - service: notify.telegram
+      data:
+        message: "Front Motion battery is low."
+        
+  ## Water Sensor
+  - alias: "Battery WaterSensor Low"
+    trigger:
+    - platform: numeric_state
+      entity_id: sensor.zwave_watersensor_battery
+      value_template: '{{ states.sensor.zwave_watersensor_battery.state }}'
+      below: 20
+    action:
+    - service: input_boolean.turn_on
+      entity_id:
+        - input_boolean.zwave_watersensor_battery_low
+        
+  - alias: "Battery WaterSensor Replaced"
+    trigger:
+    - platform: numeric_state
+      entity_id: sensor.zwave_watersensor_battery
+      value_template: '{{ states.sensor.zwave_watersensor_battery.state }}'
+      above: 50
+    action:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.zwave_watersensor_battery_low
+        
+  - alias: "Battery WaterSensor Notify"
+    trigger:
+    - platform: state
+      entity_id: input_boolean.zwave_watersensor_battery_low
+      to: 'on'
+    action:
+    - service: notify.telegram
+      data:
+        message: "Kitchen Water Sensor battery is low."

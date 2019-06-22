@@ -1,0 +1,10 @@
+  garden_earlygirl:
+    sensors:
+      moisture: sensor.earlygirl_moisture
+      temperature: sensor.earlygirl_temperature
+      conductivity: sensor.earlygirl_fertilizer
+      brightness: sensor.earlygirl_light
+    min_moisture: 22
+    max_moisture: 70
+    min_conductivity: 350
+    min_temperature: 50

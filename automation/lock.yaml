@@ -1,0 +1,16 @@
+  - alias: "Lock on Away"
+    trigger:
+    - platform: state
+      entity_id: group.people
+      to: 'away'
+    condition:
+    - condition: state
+      entity_id: lock.kwikset_garage_locked
+      state: 'unlocked'
+    action:
+    - service: lock.lock
+      entity_id:
+        - lock.kwikset_garage_locked
+    - service: notify.telegram
+      data:
+        message: "The Garage Entry Door has been locked behind you."

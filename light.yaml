@@ -1,3 +1,6 @@
   - platform: osramlightify
     host: 192.168.1.130
     scan_interval: 5
+
+  - platform: mqtt
+    command_topic: "frontyard/stakes/led1"

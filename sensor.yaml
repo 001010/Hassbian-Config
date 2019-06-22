@@ -86,3 +86,52 @@
     name: 'Office Motion'
     state_topic: 'office/multi1'
     value_template: '{{ value_json.motion }}'
+    
+  - platform: mqtt
+    name: "OpenGateway Garden esp32"
+    state_topic: "garden/OMG_Garden/SYStoMQTT"
+    unit_of_measurement: 'dB'
+    value_template: "{{ value_json.rssi}}"
+    availability_topic: "home/OMG_Garden/LWT"
+    payload_available: "online"
+    payload_not_available: "offline"
+    icon: "mdi:wifi"
+    json_attributes:
+      - version
+      - uptime
+      - freeMem
+      - SSID
+      - modules
+  - platform: mqtt
+    name: "OpenGateway Garden input"
+    state_topic: "garden/OMG_Garden/433toMQTT"
+    value_template: "{{ value_json.value}}"
+    json_attributes:
+      - protocol
+      
+#MiFlora
+  - platform: mqtt
+    name: Earlygirl Temperature
+    unit_of_measurement: "°F"
+    force_update: true
+    expire_after: 21600 # 6 hours
+    state_topic: "garden/OMG_Garden/BTtoMQTT/C47C8D6AAB7D"
+    value_template: "{{ (((value_json.tem | float) * 9 / 5) + 32) | round(1) }}" # C to F
+  - platform: mqtt
+    name: Earlygirl Moisture
+    unit_of_measurement: '%'
+    expire_after: 21600 # 6 hours
+    state_topic: "garden/OMG_Garden/BTtoMQTT/C47C8D6AAB7D"
+    value_template: "{{ value_json.moi | round(0) }}"
+  - platform: mqtt
+    name: Earlygirl Light
+    unit_of_measurement: 'lux'
+    expire_after: 21600 # 6 hours
+    state_topic: "garden/OMG_Garden/BTtoMQTT/C47C8D6AAB7D"
+    value_template: "{{ value_json.lux | round(0) }}"
+  - platform: mqtt
+    name: Earlygirl Fertilizer
+    unit_of_measurement: 'µS/cm'
+    expire_after: 21600 # 6 hours
+    state_topic: "garden/OMG_Garden/BTtoMQTT/C47C8D6AAB7D"
+    value_template: "{{ value_json.fer | round(0) }}"

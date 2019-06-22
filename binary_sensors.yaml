@@ -25,3 +25,10 @@
     name: day_garbage
     country: US
     workdays: [mon]
+    
+  - platform: mqtt
+    name: "OMGGarden"
+    state_topic: "garden/OMG_Garden/LWT"
+    payload_on: "online"
+    payload_off: "offline"
+    device_class: "connectivity"
