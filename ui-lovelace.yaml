@@ -247,17 +247,6 @@ views:
           - type: sensor
             entity: sensor.office_temperature
             name: Office Temp
-  - title: Data
-    id: data
-    icon: mdi:lan-connect
-    background: radial-gradient(grey, black)
-    theme: dark-mode
-    cards:
-    - type: history-graph
-      title: Speedtests
-      entities:
-      - sensor.speedtest_download
-      - sensor.speedtest_upload
   - title: Lights
     id: lights
     icon: mdi:lightbulb

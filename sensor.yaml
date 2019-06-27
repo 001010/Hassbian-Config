@@ -1,11 +1,11 @@
 #SpeedTest/Network
-  - platform: speedtest
-    minute:
-      - 12
-    monitored_conditions:
-      - ping
-      - download
-      - upload
+  # - platform: speedtest
+    # minute:
+      # - 12
+    # monitored_conditions:
+      # - ping
+      # - download
+      # - upload
   - platform: time_date
     display_options:
       - 'time'

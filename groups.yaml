@@ -28,7 +28,7 @@
   Date_Time:
     name: "Date & Time"
     entities:
-    - sensor.date__time
+    - sensor.date_time
     - sensor.time_utc
   Climate:
     name: Climate
@@ -54,10 +54,10 @@
     icon: mdi:lan-connect
     entities:
     - automation.ssl_renew
-    - group.speedtest
+    # - group.speedtest
     - group.pings
     - group.ssl_certificate
-    - history_graph.comcast_speedtests
+    # - history_graph.comcast_speedtests
   Downstairs:
     name: Downstairs
     view: yes
@@ -141,6 +141,12 @@
     - group.front_porch_lights
     - group.front_porch_sensor
     - group.front_porch_scenes
+    - group.front_stakes
+  Front Stakes:
+    name: Front Porch
+    entities:
+    - light.stakes_frontyard
+    - input_number.stakes1_animation_speed
   Garden:
     name: Garden
     view: yes
@@ -199,8 +205,8 @@
     view: yes
     icon: mdi:account-multiple
     entities:
-    - group.track_Tyler
-    - group.track_Kristine
+    - person.tyler
+    - person.kristine
   Routines:
     view: yes
     icon: mdi:code-tags-check
@@ -309,8 +315,6 @@
     name: Information Center
     entities:
     - sun.sun
-    - sun.next_rising
-    - sun.next_setting
   Phases:
     name: Day Phases
     entities:
@@ -323,12 +327,12 @@
   SSL Certificate:
     entities:
     - sensor.ssl_expires
-  Speedtest:
-    name: Network Speed
-    entities:
-    - sensor.speedtest_ping
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
+  # Speedtest:
+    # name: Network Speed
+    # entities:
+    # - sensor.speedtest_ping
+    # - sensor.speedtest_download
+    # - sensor.speedtest_upload
   pings:
     name: Online
     entities:

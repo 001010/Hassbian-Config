@@ -3,4 +3,32 @@
     scan_interval: 5
 
   - platform: mqtt
-    command_topic: "frontyard/stakes/led1"
+    schema: json
+    name: "Stakes Frontyard"
+    state_topic: "frontyard/stakes1"
+    command_topic: "frontyard/stakes1/set"
+    effect: true
+    effect_list:
+      - bpm
+      - candy cane  
+      - confetti  
+      - cyclon rainbow  
+      - dots  
+      - fire  
+      - glitter  
+      - juggle  
+      - lightning
+      - noise  
+      - police all  
+      - police one  
+      - rainbow  
+      - rainbow with glitter  
+      - ripple  
+      - sinelon  
+      - solid  
+      - twinkle  
+    brightness: true
+    # flash: true
+    rgb: true
+    optimistic: false
+    qos: 0    

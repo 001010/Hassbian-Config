@@ -110,14 +110,14 @@
       entity_id:
       - switch.housefan_switch
 
-  - alias: "Climate Update"
-    trigger:
-    - platform: time
-      minutes: 0
-      seconds: 00
-    - platform: sun
-      event: sunset
-    - platform: sun
-      event: sunrise
-    action:
-    - service: script.update_all_temp_sheet
+  # - alias: "Climate Update"
+    # trigger:
+    # - platform: time
+      # minutes: 0
+      # seconds: 00
+    # - platform: sun
+      # event: sunset
+    # - platform: sun
+      # event: sunrise
+    # action:
+    # - service: script.update_all_temp_sheet

@@ -1,0 +1,11 @@
+  - alias: "Stakes Animation Speed"
+    initial_state: True
+    hide_entity: False
+    trigger:
+      - platform: state
+        entity_id: input_number.stakes1_animation_speed
+    action:
+      - service: mqtt.publish
+        data_template:
+          topic: "frontyard/stakes1/set"
+          payload: '{"transition":{{ trigger.to_state.state | int }}}'

@@ -28,6 +28,8 @@ conversation:
 # Enables support for tracking state changes over time.
 history:
 
+system_health:
+
 history_graph: !include history_graph.yaml
 # View all events in a logbook
 logbook:
@@ -82,6 +84,7 @@ automation: !include_dir_merge_list automation
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 input_select: !include input_select.yaml
+
 binary_sensor: !include binary_sensors.yaml
 
 ## Cover ##
@@ -104,7 +107,7 @@ zwave:
 #  polling_interval: 60000
 
 zha:
-  usb_path: /dev/zigbee
+  usb_path: /dev/ttyACM0
   database_path: /home/homeassistant/.homeassistant/zigbee.db
 
 notify:
@@ -129,19 +132,15 @@ telegram_bot:
   # username: !secret roomba_username
   # password: !secret roomba_password
 
-# Text to speech
-tts:
-  platform: google
-
 person: !include people.yaml
 
 device_tracker:
-  - platform: owntracks
-  - platform: bluetooth_tracker
-    device_id: hci0
-    new_device_defaults:
-      track_new_devices: false
-      hide_if_away: false
+  # - platform: owntracks
+  # - platform: bluetooth_tracker
+    # device_id: hci0
+    # new_device_defaults:
+      # track_new_devices: false
+      # hide_if_away: false
   # - platform: asuswrt
     # host: !secret asus_host
     # username: !secret asus_username
