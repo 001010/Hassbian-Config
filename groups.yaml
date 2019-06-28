@@ -54,10 +54,8 @@
     icon: mdi:lan-connect
     entities:
     - automation.ssl_renew
-    # - group.speedtest
     - group.pings
     - group.ssl_certificate
-    # - history_graph.comcast_speedtests
   Downstairs:
     name: Downstairs
     view: yes
@@ -167,7 +165,6 @@
     - light.lampdimmer_level
     - light.livingroomdimmer_level
     - media_player.plex_web_chrome
-    - media_player.roku_4__yy009v221044
     - media_player.living_room
   Master Bedroom:
     name: Master Bedroom

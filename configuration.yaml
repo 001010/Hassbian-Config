@@ -106,9 +106,8 @@ zwave:
   autoheal: false
 #  polling_interval: 60000
 
-zha:
-  usb_path: /dev/ttyACM0
-  database_path: /home/homeassistant/.homeassistant/zigbee.db
+# zha:
+  # usb_path: /dev/zigbee
 
 notify:
   - name: pushbullet
