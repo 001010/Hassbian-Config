@@ -277,3 +277,17 @@ views:
       entity: light.tylers_night_stand
     - type: entity-button
       entity: switch.bathroomheater_switch
+  - title: System
+    id: system
+    icon: mdi:settings
+    background: radial-gradient(grey, black)
+    theme: dark-mode
+    cards:
+    - type: gauge
+      name: With Severity
+      unit: '%'
+      entity: sensor.cpu_usage
+      severity:
+        green: 0
+        yellow: 45
+        red: 85

@@ -23,3 +23,8 @@
       - Garbage
       - Both
     icon: mdi:delete-empty
+  hass_theme:
+    name: HASS Themes
+    options:
+    - BlueNight
+    - GreyNight
