@@ -3,8 +3,8 @@
   - alias: sunset
     trigger:
       - platform: state
-        entity_id: input_boolean.phase_evening
-        to: 'on'
+        entity_id: input_select.phases
+        to: 'Evening'
     condition:
       - condition: state
         entity_id: binary_sensor.home_away

@@ -1,0 +1,24 @@
+  - alias: "Morning Update"
+    trigger:
+      - platform: state
+        entity_id: input_boolean.morning_update
+        to: 'on'
+    condition:
+      condition: and
+      conditions:
+      - condition: state
+        entity_id: input_select.phases
+        state: 'Morning'
+      - condition: state
+        entity_id: input_boolean.morning_update_complete
+        state: 'Morning'
+    action:
+    - service: input_boolean.turn_off
+      entity_id:
+      - input_boolean.morning_update
+    ####### Start Update
+    - service: script.morning_update_notify
+    ######### End Update
+    - service: input_boolean.turn_on
+      entity_id:
+      - input_boolean.morning_update_complete

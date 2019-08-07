@@ -40,15 +40,15 @@
 # OSRAM Lightify
   light.rgbw_stairs:
     friendly_name: "Stair Lights"
-  light.rgbwdesk:
+  light.osram_rgbw_desklight:
     friendly_name: "Desk Light"
     emulated_hue_name: "desk light"
     emulated_hue_hidden: false
-  light.rgbwfrontporch:
+  light.osram_rgbw_frontporch:
     friendly_name: "Front Porch Light"
     emulated_hue_name: "front porch light"
     emulated_hue_hidden: false
-  light.rgbwfrontgarage:
+  light.osram_rgbw_frontgarage:
     friendly_name: "Front Garage Light"
     emulated_hue_name: "front garage light"
     emulated_hue_hidden: false

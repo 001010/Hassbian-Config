@@ -11,10 +11,22 @@
         state: on
         brightness: 40
 
+  - name: sleepwalker
+    entities:
+      light.kitchendimmer_level:
+        state: on
+        brightness: 40
+      light.diningdimmer_level: 
+        state: on
+        brightness: 40
+      light.livingroomdimmer_level:
+        state: on
+        brightness: 40
+        
 ## Front House
   - name: frontlights_normal_porch
     entities:
-      light.rgbwfrontporch:
+      light.osram_rgbw_frontporch:
         state: on
         brightness: 255
         transition: 1
@@ -24,12 +36,12 @@
     entities:
       switch.outdoorswitch_switch:
         state: off
-      light.rgbwfrontporch:
+      light.osram_rgbw_frontporch:
         state: on
         brightness: 255
         transition: 1
         kelvin: 2800
-      light.rgbwfrontgarage:
+      light.osram_rgbw_frontgarage:
         state: on
         brightness: 255
         transition: 1

@@ -96,18 +96,18 @@
     payload_available: "online"
     payload_not_available: "offline"
     icon: "mdi:wifi"
-    json_attributes:
-      - version
-      - uptime
-      - freeMem
-      - SSID
-      - modules
+    json_attributes_topic: "garden/OMG_Garden/SYStoMQTT"
+      # - version
+      # - uptime
+      # - freeMem
+      # - SSID
+      # - modules
   - platform: mqtt
     name: "OpenGateway Garden input"
     state_topic: "garden/OMG_Garden/433toMQTT"
     value_template: "{{ value_json.value}}"
-    json_attributes:
-      - protocol
+    json_attributes_topic: "garden/OMG_Garden/433toMQTT"
+      # - protocol
       
 #MiFlora
   - platform: mqtt

@@ -97,3 +97,48 @@
         {% if is_state('input_select.garbage_week', 'Garbage') %}It's time to take out the garbage.
         {% else %}It's time to take out the Garbage and Recycle.
         {% endif %}"
+
+###############################################
+############## Bedroom Lights
+###############################################
+
+'arrival_notify':
+  alias: "Arrival Notification"
+  sequence:
+  - service: sonos.snapshot
+    entity_id: media_player.living_room
+  - service: tts.google_translate_say
+    entity_id: media_player.living_room
+    data:
+      message: 'Motion Detected on Front Porch'
+  - delay: '0:00:02'
+  - service: sonos.restore
+    entity_id: media_player.living_room
+      
+'morning_update_notify':
+  alias: "Good Morning"
+  sequence:
+  - service: sonos.snapshot
+    entity_id: media_player.living_room
+  - service: tts.google_translate_say
+    entity_id: media_player.living_room
+    data:
+      message: 'Good Morning!'
+  - delay: '0:00:01'
+  - service: sonos.restore
+    entity_id: media_player.living_room
+    
+'request_update_notify':
+  alias: "Requested Update"
+  sequence:
+  - service: sonos.snapshot
+    entity_id: media_player.living_room
+    
+  - service: tts.google_translate_say
+    entity_id: media_player.living_room
+    data_template:
+      message: "Hello, presently the average house temperature is {{ states('input_number.temperature_house') }}°F"
+      
+  - delay: '0:00:06'
+  - service: sonos.restore
+    entity_id: media_player.living_room

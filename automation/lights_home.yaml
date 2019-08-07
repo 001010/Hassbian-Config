@@ -9,3 +9,51 @@
         - input_boolean.night_tv_mode
     - service: scene.turn_on
       entity_id: scene.night_tv_mode
+
+  - alias: "Sleepwalker_ON"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_zhamotionsensor_motion
+        to: 'on'
+    condition:
+      - condition: state
+        entity_id: input_select.phases
+        state: 'Bed'
+    action:
+    - service: light.turn_on
+      entity_id: light.kitchendimmer_level
+      data:
+        brightness: 33
+    - service: light.turn_on
+      entity_id: light.livingroomdimmer_level
+      data:
+        brightness: 33
+    # - service: light.turn_on
+      # entity_id: light.diningdimmer_level
+      # data:
+        # brightness: 35
+    # - service: light.turn_on
+      # entity_id: light.officedimmer_level
+      # data:
+        # brightness: 35
+
+  - alias: "Sleepwalker_OFF"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_zhamotionsensor_motion
+        to: 'off'
+        for:
+          seconds: 30
+    condition:
+      - condition: state
+        entity_id: input_select.phases
+        state: 'Bed'
+    action:
+    - service: light.turn_off
+      entity_id: light.kitchendimmer_level
+    - service: light.turn_off
+      entity_id: light.livingroomdimmer_level
+    # - service: light.turn_off
+      # entity_id: light.diningdimmer_level
+    # - service: light.turn_off
+      # entity_id: light.officedimmer_level

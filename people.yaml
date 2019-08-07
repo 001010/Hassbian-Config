@@ -1,13 +1,18 @@
   - name: Tyler
     id: tyler6789
     device_trackers:
+    - device_tracker.v30_2
     - device_tracker.tyler_bt
     - device_tracker.google_maps_tylerrodgersgmailcom
   - name: Kristine
     id: kristine6789
     device_trackers:
+    - device_tracker.v30
     - device_tracker.kristine_bt
     - device_tracker.google_maps_116743014687384426126
-  # - name: Sawyer
-    # id: sawyer6789
-    # device_trackers:
+  - name: Sawyer
+    id: sawyer6789
+    device_trackers:
+    - device_tracker.lg_hbs730
+  - name: Finn
+    id: finn6789

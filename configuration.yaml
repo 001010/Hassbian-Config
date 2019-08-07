@@ -29,7 +29,15 @@ conversation:
 # Enables support for tracking state changes over time.
 history:
 
+## Configurations ##
+config:
+
+## Map Panel ##
+# map:
 system_health:
+
+tts:
+  - platform: google_translate
 
 history_graph: !include history_graph.yaml
 # View all events in a logbook
@@ -95,20 +103,11 @@ cover:
     password: !secret myq_password
     type: chamberlain
 
-## Configurations ##
-config:
-
-## Map Panel ##
-map:
-
 zwave:
   usb_path: /dev/zwave
   network_key: !secret zwave_key
   autoheal: false
 #  polling_interval: 60000
-
-# zha:
-  # usb_path: /dev/zigbee
 
 notify:
   - name: pushbullet
@@ -135,19 +134,9 @@ telegram_bot:
 person: !include people.yaml
 
 device_tracker:
-  # - platform: owntracks
-  # - platform: bluetooth_tracker
-    # device_id: hci0
-    # new_device_defaults:
-      # track_new_devices: false
-      # hide_if_away: false
-  # - platform: asuswrt
-    # host: !secret asus_host
-    # username: !secret asus_username
-    # password: !secret asus_password
-    # protocol: telnet
-    # interval_seconds: 15
-    # consider_home: 0:10:00
+  - platform: bluetooth_le_tracker
+  - platform: bluetooth_tracker
+    request_rssi: true
   - platform: google_maps
     consider_home: 0:10:00
     username: !secret google-map-user
@@ -183,6 +172,14 @@ zone 3:
   longitude: !secret saywer_school_longitude
   radius: 250
   icon: mdi:school
+
+speedtestdotnet:
+  scan_interval:
+    minutes: 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
 
 logger:
   default: warning

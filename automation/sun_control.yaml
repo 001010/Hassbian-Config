@@ -2,55 +2,57 @@
   - alias: "Phase Morning"
     trigger:
     - platform: time
-      at: '3:00:00'
+      at: '4:30:00'
     action:
-    - service: input_boolean.turn_on
-      entity_id:
-        - input_boolean.phase_morning
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.phases
+        option: Morning
     - service: input_boolean.turn_off
-      entity_id:
-        - input_boolean.phase_day
-        - input_boolean.phase_evening
-        - input_boolean.phase_night
+      entity_id: input_boolean.morning_update
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.morning_update_complete
+        
   - alias: "Phase Day"
     trigger:
     - platform: sun
       event: sunrise
     action:
-    - service: input_boolean.turn_on
-      entity_id:
-        - input_boolean.phase_day
-    - service: input_boolean.turn_off
-      entity_id:
-        - input_boolean.phase_morning
-        - input_boolean.phase_evening
-        - input_boolean.phase_night
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.phases
+        option: Day
   - alias: "Phase Evening"
     trigger:
     - platform: sun
       event: sunset
+    condition:
+      - condition: state
+        entity_id: input_select.phases
+        state: 'Day'
     action:
-    - service: input_boolean.turn_on
-      entity_id:
-        - input_boolean.phase_evening
-    - service: input_boolean.turn_off
-      entity_id:
-        - input_boolean.phase_morning
-        - input_boolean.phase_day
-        - input_boolean.phase_night
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.phases
+        option: Evening
   - alias: "Phase Night"
     trigger:
     - platform: time
       at: '20:00:00'
     action:
-    - service: input_boolean.turn_on
-      entity_id:
-        - input_boolean.phase_night
-    - service: input_boolean.turn_off
-      entity_id:
-        - input_boolean.phase_morning
-        - input_boolean.phase_day
-        - input_boolean.phase_evening
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.phases
+        option: Night
+  - alias: "Phase Bed"
+    trigger:
+    - platform: time
+      at: '0:00:00'
+    action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.phases
+        option: Bed
 
 ## Sunrise
   - alias: "At Sunrise"

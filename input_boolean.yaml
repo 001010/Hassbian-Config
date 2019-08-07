@@ -1,11 +1,3 @@
-  phase_morning:
-    initial: off
-  phase_day:
-    initial: off
-  phase_evening:
-    initial: off
-  phase_night:
-    initial: off
   outside_warmer:
     initial: off
   outside_cooler:
@@ -25,25 +17,22 @@
     initial: off
   kid_alarm:
     initial: off
+  morning_update:
+    initial: off
+  morning_update_complete:
+    initial: off
     
   warning_upstairs:
-    initial: off
   warning_downstairs:
-    initial: off
   warning_exterior:
-    initial: off
 
   auto_bedroom_humidity:
-    initial: off
     
   zwave_motion_entryway_battery_low:
-    initial: off
   zwave_motion_front_battery_low:
-    initial: off
   zwave_motion_upstairs_battery_low:
-    initial: off
   zwave_watersensor_battery_low:
-    initial: off
 
   holiday_lights:
   fun_fear:
+  wake_on:

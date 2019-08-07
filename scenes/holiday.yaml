@@ -3,12 +3,12 @@
 ## "Fun Fear" - Turn Front Lights On RED when front motion is detected.
   - name: frontlights_fun_fear
     entities:
-      light.rgbwfrontporch:
+      light.osram_rgbw_frontporch:
         state: on
         brightness: 255
         transition: 1
         color_name: 'red'
-      light.rgbwfrontgarage:
+      light.osram_rgbw_frontgarage:
         state: on
         brightness: 255
         transition: 1
@@ -17,12 +17,12 @@
 ## Holidays
   - name: frontlights_valentines
     entities:
-      light.rgbwfrontporch:
+      light.osram_rgbw_frontporch:
         state: on
         brightness: 255
         transition: 1
         color_name: 'red'
-      light.rgbwfrontgarage:
+      light.osram_rgbw_frontgarage:
         state: on
         brightness: 255
         transition: 1
@@ -30,12 +30,12 @@
         
   - name: frontlights_stpattys
     entities:
-      light.rgbwfrontporch:
+      light.osram_rgbw_frontporch:
         state: on
         brightness: 255
         transition: 1
         color_name: 'lime'
-      light.rgbwfrontgarage:
+      light.osram_rgbw_frontgarage:
         state: on
         brightness: 255
         transition: 1
@@ -43,12 +43,12 @@
         
   - name: frontlights_july4th
     entities:
-      light.rgbwfrontporch:
+      light.osram_rgbw_frontporch:
         state: on
         brightness: 255
         transition: 1
         color_name: 'Blue'
-      light.rgbwfrontgarage:
+      light.osram_rgbw_frontgarage:
         state: on
         brightness: 255
         transition: 1
@@ -56,12 +56,12 @@
 
   - name: frontlights_halloween
     entities:
-      light.rgbwfrontporch:
+      light.osram_rgbw_frontporch:
         state: on
         brightness: 255
         transition: 1
         color_name: 'Green'
-      light.rgbwfrontgarage:
+      light.osram_rgbw_frontgarage:
         state: on
         brightness: 255
         transition: 1
@@ -69,12 +69,12 @@
         
   - name: frontlights_thanksgiving
     entities:
-      light.rgbwfrontporch:
+      light.osram_rgbw_frontporch:
         state: on
         brightness: 255
         transition: 1
         color_name: 'Yellow'
-      light.rgbwfrontgarage:
+      light.osram_rgbw_frontgarage:
         state: on
         brightness: 255
         transition: 1
@@ -82,12 +82,12 @@
 
   - name: frontlights_christmas
     entities:
-      light.rgbwfrontporch:
+      light.osram_rgbw_frontporch:
         state: on
         brightness: 255
         transition: 1
         color_name: 'Red'
-      light.rgbwfrontgarage:
+      light.osram_rgbw_frontgarage:
         state: on
         brightness: 255
         transition: 1

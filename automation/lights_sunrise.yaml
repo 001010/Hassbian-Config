@@ -1,16 +1,13 @@
   - alias: sunrise
     trigger:
       - platform: state
-        entity_id: input_boolean.phase_day
-        to: 'on'
-    condition:
-      - condition: state
-        entity_id: binary_sensor.home_away
-        state: 'on'
+        entity_id: input_select.phases
+        to: 'Morning'
     action:
     - service: scene.turn_on
       entity_id:
         - scene.sunrise_reset
+    - delay: '0:00:05'
     - service: scene.turn_on
       entity_id:
         - scene.sunrise

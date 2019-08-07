@@ -10,15 +10,38 @@
     action:
       - service: light.turn_on
         entity_id:
-        - light.rgbw_desk
+        - light.osram_rgbw_desklight
         data:
           brightness: 255
           rgb_color: [255,0,0]
       - service: light.turn_on
         entity_id:
-        - light.rgbw_desk
+        - light.osram_rgbw_desklight
         data:
           rgb_color: [0,255,0]
       - service: light.turn_off
         entity_id:
-        - light.rgbw_desk
+        - light.osram_rgbw_desklight
+
+  - alias: "Arrival Front Porch"
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_front_sensor
+      to: 'on'
+    condition: 
+      condition: or
+      conditions:
+      - condition: state
+        entity_id: input_select.phases
+        state: 'Morning'
+      - condition: state
+        entity_id: input_select.phases
+        state: 'Day'
+      - condition: state
+        entity_id: input_select.phases
+        state: 'Evening'
+      - condition: state
+        entity_id: input_select.phases
+        state: 'Night'
+    action:
+    - service: script.arrival_notify

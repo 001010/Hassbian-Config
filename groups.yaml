@@ -81,7 +81,7 @@
     icon: mdi:office
     entities:
     - light.officedimmer_level
-    - light.rgbwdesk
+    - light.osram_rgbw_desklight
     - group.office_sensors
     - sensor.tyler_to_home
     - sensor.tyler_to_work
@@ -110,8 +110,8 @@
     name: Front Porch Lights
     view: no
     entities:
-    - light.rgbwfrontporch
-    - light.rgbwfrontgarage
+    - light.osram_rgbw_frontporch
+    - light.osram_rgbw_frontgarage
     - switch.frontporchlight_switch
     - switch.outdoorswitch_switch
     - switch.outdoorswitch2_switch
@@ -234,8 +234,8 @@
   outside_lights:
     entities:
     - switch.frontporchlight_switch
-    - light.rgbwfrontporch
-    - light.rgbwfrontgarage
+    - light.osram_rgbw_frontporch
+    - light.osram_rgbw_frontgarage
     - switch.outdoorswitch_switch
     
     ## Devices
@@ -315,10 +315,7 @@
   Phases:
     name: Day Phases
     entities:
-    - input_boolean.phase_morning
-    - input_boolean.phase_day
-    - input_boolean.phase_evening
-    - input_boolean.phase_night
+    - input_select.phases
 
 # System
   SSL Certificate:
