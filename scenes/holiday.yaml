@@ -13,6 +13,12 @@
         brightness: 255
         transition: 1
         color_name: 'red'
+      light.stakes_frontyard:
+        state: on
+        brightness: 255
+        transition: 1
+        effect: 'solid'
+        color_name: 'red'
 
 ## Holidays
   - name: frontlights_valentines
@@ -27,6 +33,28 @@
         brightness: 255
         transition: 1
         color_name: 'deeppink'
+      light.stakes_frontyard:
+        state: on
+        brightness: 255
+        color_name: 'pink'
+        effect: 'confetti'
+        
+  - name: frontlights_easter
+    entities:
+      light.osram_rgbw_frontporch:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'yellow'
+      light.osram_rgbw_frontgarage:
+        state: on
+        brightness: 255
+        transition: 1
+        color_name: 'deeppink'
+      light.stakes_frontyard:
+        state: on
+        brightness: 255
+        effect: 'rainbow with glitter'
         
   - name: frontlights_stpattys
     entities:
@@ -40,7 +68,12 @@
         brightness: 255
         transition: 1
         color_name: 'darkgreen'
-        
+      light.stakes_frontyard:
+        state: on
+        brightness: 255
+        effect: 'solid'
+        color_name: 'green'
+
   - name: frontlights_july4th
     entities:
       light.osram_rgbw_frontporch:
@@ -53,6 +86,11 @@
         brightness: 255
         transition: 1
         color_name: 'Red'
+      light.stakes_frontyard:
+        state: on
+        brightness: 255
+        effect: 'solid'
+        color_name: 'white'
 
   - name: frontlights_halloween
     entities:
@@ -66,6 +104,11 @@
         brightness: 255
         transition: 1
         color_name: 'Purple'
+      light.stakes_frontyard:
+        state: on
+        brightness: 255
+        effect: 'solid'
+        color_name: 'orange'
         
   - name: frontlights_thanksgiving
     entities:
@@ -79,6 +122,10 @@
         brightness: 255
         transition: 1
         color_name: 'Orange'
+      light.stakes_frontyard:
+        state: on
+        brightness: 255
+        effect: 'fire'
 
   - name: frontlights_christmas
     entities:
@@ -92,3 +139,7 @@
         brightness: 255
         transition: 1
         color_name: 'Green'
+      light.stakes_frontyard:
+        state: on
+        brightness: 255
+        effect: 'candy cane'

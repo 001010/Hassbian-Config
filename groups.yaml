@@ -233,10 +233,9 @@
     - light.livingroomdimmer_level
   outside_lights:
     entities:
-    - switch.frontporchlight_switch
     - light.osram_rgbw_frontporch
     - light.osram_rgbw_frontgarage
-    - switch.outdoorswitch_switch
+    - light.stakes_frontyard
     
     ## Devices
   Nest:

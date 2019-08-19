@@ -1,3 +1,6 @@
+# Track the Moon
+  - platform: moon
+
 #SpeedTest/Network
   # - platform: speedtest
     # minute:

@@ -45,4 +45,8 @@
         state: on
         brightness: 255
         transition: 1
-        kelvin: 2800        
+        kelvin: 2800
+      light.stakes_frontyard:
+        state: on
+        brightness: 255
+        kelvin: 2800

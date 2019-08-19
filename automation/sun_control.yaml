@@ -27,9 +27,14 @@
     - platform: sun
       event: sunset
     condition:
+      condition: or
+      conditions:
       - condition: state
         entity_id: input_select.phases
         state: 'Day'
+      - condition: state
+        entity_id: input_select.phases
+        state: 'Evening'
     action:
     - service: input_select.select_option
       data:
@@ -39,6 +44,8 @@
     trigger:
     - platform: time
       at: '20:00:00'
+    - platform: sun
+      event: sunset
     action:
     - service: input_select.select_option
       data:
@@ -66,6 +73,11 @@
         # data:
           # brightness: 255
       - delay: 0:05
+      - service: light.turn_off
+        entity_id:
+        - light.osram_rgbw_frontporch
+        - light.osram_rgbw_frontgarage
+        - light.stakes_frontyard
       - service: switch.turn_off
         entity_id:
         - switch.frontporchlight_switch
@@ -84,11 +96,11 @@
         data:
           message: "It's Sunset."
 
-  - alias: "Turn ON Lights 5minutes before sunset"
+  - alias: "Turn ON Sunset"
     trigger:
       - platform: sun
         event: sunset
-        offset: -00:05
+        offset: -00:30
     action:
       - service: switch.turn_on
         entity_id:

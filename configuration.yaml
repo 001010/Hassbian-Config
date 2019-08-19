@@ -229,3 +229,7 @@ camera:
     input: !secret front1_cam_url
 
 plant: !include plant.yaml
+
+sleepiq:
+  username: !secret sleepiq_username
+  password: !secret sleepiq_password
