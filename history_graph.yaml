@@ -8,10 +8,10 @@
       - input_number.temperature_upstairs
     hours_to_show: 72
     refresh: 3600
-  # speedtest:
-    # name: Comcast Speedtests
-    # entities:
-      # - sensor.speedtest_download
-      # - sensor.speedtest_upload
-    # hours_to_show: 48
-    # refresh: 3600    
+  speedtest:
+    name: Comcast Speedtests
+    entities:
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+    hours_to_show: 48
+    refresh: 3600

@@ -14,5 +14,5 @@
     id: sawyer6789
     device_trackers:
     - device_tracker.lg_hbs730
-  - name: Finn
-    id: finn6789
+  # - name: Finn
+    # id: finn6789

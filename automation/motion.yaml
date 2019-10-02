@@ -17,6 +17,9 @@
       - platform: state
         entity_id: binary_sensor.motion_upstairs_sensor
         to: 'on'
+      - platform: state
+        entity_id: binary_sensor.sleepnumber_tyler_kristine_is_in_bed
+        to: 'off'
     condition:
       - condition: state
         entity_id: input_boolean.warning_upstairs
@@ -34,6 +37,9 @@
       - platform: state
         entity_id: binary_sensor.motion_upstairs_sensor
         to: 'off'
+      - platform: state
+        entity_id: binary_sensor.sleepnumber_tyler_kristine_is_in_bed
+        to: 'on'
     condition:
       - condition: state
         entity_id: input_boolean.warning_upstairs

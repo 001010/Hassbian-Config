@@ -42,3 +42,10 @@
     ignore_availability: true
     name: Contacts
     track: true
+
+- cal_id: f8tumk7ej55r56vgnt1ccn09bo@group.calendar.google.com
+  entities:
+  - device_id: house_maintenance_schedule
+    ignore_availability: true
+    name: House Maintenance Schedule
+    track: true

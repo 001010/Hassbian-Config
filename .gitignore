@@ -4,6 +4,8 @@
 *.crt
 *.key
 OZW_Log.txt
+google_calendars.yaml
+sensor.yaml
 home-assistant.log
 home-assistant*.db*
 *.db-journal

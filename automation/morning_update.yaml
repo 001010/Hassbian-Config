@@ -11,7 +11,7 @@
         state: 'Morning'
       - condition: state
         entity_id: input_boolean.morning_update_complete
-        state: 'Morning'
+        state: 'off'
     action:
     - service: input_boolean.turn_off
       entity_id:

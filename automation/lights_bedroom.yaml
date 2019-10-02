@@ -33,7 +33,7 @@
     - service: light.turn_on
       data:
         entity_id:
-          - light.kristines_night_stand
-          - light.tylers_night_stand
+          - light.kristines_nightstand
+          - light.tylers_nightstand
         rgb_color: [255,171,88]
         brightness: 255

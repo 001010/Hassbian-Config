@@ -278,8 +278,8 @@
     - sensor.zwave_motion_masterbedroom_battery
   Nightstands:
     entities:
-    - light.kristines_night_stand
-    - light.tylers_night_stand
+    - light.kristines_nightstand
+    - light.tylers_nightstand
   Water Sensor:
     entities:
     - sensor.watersensor_flood

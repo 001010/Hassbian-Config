@@ -24,11 +24,11 @@
     emulated_hue_hidden: false
 
 #Tradfri
-  light.kristines_night_stand:
+  light.kristines_nightstand:
     friendly_name: "Kristine's Night Stand"
     emulated_hue_name: "kristines night stand"
     emulated_hue_hidden: false
-  light.tylers_night_stand:
+  light.tylers_nightstand:
     friendly_name: "Tyler's Night Stand"
     emulated_hue_name: "tylers night stand"
     emulated_hue_hidden: false

@@ -138,7 +138,6 @@ device_tracker:
   - platform: bluetooth_tracker
     request_rssi: true
   - platform: google_maps
-    consider_home: 0:10:00
     username: !secret google-map-user
     password: !secret google-map-pass
 
