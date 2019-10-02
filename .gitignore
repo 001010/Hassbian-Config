@@ -10,6 +10,7 @@ home-assistant.log
 home-assistant*.db*
 *.db-journal
 *.db-*
+*.db
 lib
 deps
 tts
