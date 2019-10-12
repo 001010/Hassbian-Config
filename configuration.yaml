@@ -232,3 +232,9 @@ plant: !include plant.yaml
 sleepiq:
   username: !secret sleepiq_username
   password: !secret sleepiq_password
+
+withings:
+  client_id: !secret withings_CLIENT_ID
+  client_secret: !secret withings_CLIENT_SECRET
+  profiles:
+    - Tyler
