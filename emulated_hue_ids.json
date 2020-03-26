@@ -46,6 +46,8 @@
     "5": "input_boolean.night_tv_mode",
     "50": "light.osram_rgbw_frontporch",
     "51": "light.tylers_nightstand",
+    "52": "input_boolean.night_mode",
+    "53": "lock.kwikset_garage_locked",
     "6": "light.livingroomdimmer_level_9_0",
     "7": "input_slider.stairs_rgb_b",
     "8": "switch.outdoorswitch_switch_2_0",

@@ -10,6 +10,15 @@
       light.livingroomdimmer_level:
         state: on
         brightness: 40
+  - name: night_mode
+    entities:
+      light.kitchendimmer_level:
+        state: on
+        brightness: 40
+      light.diningdimmer_level: 
+        state: off
+      light.livingroomdimmer_level:
+        state: off
 
   - name: sleepwalker
     entities:

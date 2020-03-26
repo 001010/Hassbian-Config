@@ -70,6 +70,12 @@
       entity_id:
         - scene.night_tv_mode
         
+'night_mode':
+  alias: Night Mode
+  sequence:
+    - service: scene.turn_on
+      entity_id:
+        - scene.night_mode
         
 ###############################################
 ############## Bedroom Lights

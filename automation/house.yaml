@@ -1,7 +1,7 @@
   - alias: "Exterior Warning ON"
     trigger:
       - platform: state
-        entity_id: binary_sensor.motion_front_sensor
+        entity_id: binary_sensor.motion_zhafrontporch_motion
         to: 'on'
       - platform: state
         entity_id: cover.2car_garage_door_opener
@@ -21,7 +21,7 @@
   - alias: "Exterior Warning OFF"
     trigger:
       - platform: state
-        entity_id: binary_sensor.motion_front_sensor
+        entity_id: binary_sensor.motion_zhafrontporch_motion
         to: 'off'
       - platform: state
         entity_id: cover.2car_garage_door_opener

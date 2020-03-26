@@ -254,18 +254,16 @@
     - sensor.zwave_motion_upstairs_battery
   Entryway Sensor:
     entities:
-    - binary_sensor.motion_entryway_sensor
+    - binary_sensor.motion_entryway_motion
     - sensor.motion_entryway_luminance
     - sensor.motion_entryway_relative_humidity
     - sensor.motion_entryway_temperature
     - sensor.zwave_motion_entryway_battery
-  Front Porch Sensor:
+  Front Porch ZHA Sensor:
     entities:
-    - binary_sensor.motion_front_sensor
-    - sensor.motion_front_luminance
-    - sensor.motion_front_relative_humidity
-    - sensor.motion_front_temperature
-    - sensor.zwave_motion_front_battery
+    - binary_sensor.motion_zhafrontporch_motion
+    - sensor.motion_zhafrontporch_temperature
+    - sensor.motion_zhafrontporch_power
   Bedroom Sensor:
     entities:
     - input_number.bedroom_humidity

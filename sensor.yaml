@@ -44,16 +44,6 @@
         unit_of_measurement: '%'
         friendly_name: "Battery Level"
         icon_template: mdi:battery
-      zwave_motion_entryway_battery:
-        value_template: '{{ states.zwave.motion_entryway.attributes.battery_level | int }}'
-        unit_of_measurement: '%'
-        friendly_name: "Battery Level"
-        icon_template: mdi:battery
-      zwave_motion_front_battery:
-        value_template: '{{ states.zwave.motion_front.attributes.battery_level | int }}'
-        unit_of_measurement: '%'
-        friendly_name: "Battery Level"
-        icon_template: mdi:battery
       zwave_watersensor_battery:
         value_template: '{{ states.zwave.watersensor.attributes.battery_level | int }}'
         unit_of_measurement: '%'
@@ -64,13 +54,13 @@
         unit_of_measurement: '%'
         friendly_name: "Battery Level"
         icon_template: mdi:battery
-      sensor.withings_weight_lb_tyler:
-        value_template: "{{ ((states('sensor.withings_weight_kg_tyler') | float ) * 1.8) + 32.0 | round(0) }}"
+#      sensor.withings_weight_lb_tyler:
+#        value_template: "{{ ((states('sensor.withings_weight_kg_tyler') | float ) * 1.8) + 32.0 | round(0) }}"
         # unit_of_measurement: 'lbs'
         # friendly_name: "Tyler's Weight"
         # icon_template: mdi:weight-pound
-      sensor.withings_weight_lb_kristine:
-        value_template: "{{ ((states('sensor.withings_weight_kg_kristine') | float ) * 1.8) + 32.0 | round(0) }}"
+#      sensor.withings_weight_lb_kristine:
+#        value_template: "{{ ((states('sensor.withings_weight_kg_kristine') | float ) * 1.8) + 32.0 | round(0) }}"
         # unit_of_measurement: 'lbs'
         # friendly_name: "Kristine's Weight"
         # icon_template: mdi:weight-pound

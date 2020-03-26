@@ -3,29 +3,29 @@
   - alias: "Battery Entryway Low"
     trigger:
     - platform: numeric_state
-      entity_id: sensor.zwave_motion_entryway_battery
-      value_template: '{{ states.sensor.zwave_motion_entryway_battery.state }}'
+      entity_id: sensor.motion_entryway_battery
+      value_template: '{{ states.sensor.motion_entryway_battery.state }}'
       below: 20
     action:
     - service: input_boolean.turn_on
       entity_id:
-        - input_boolean.zwave_motion_entryway_battery_low
+        - input_boolean.motion_entryway_battery_low
         
   - alias: "Battery Entryway Replaced"
     trigger:
     - platform: numeric_state
-      entity_id: sensor.zwave_motion_entryway_battery
-      value_template: '{{ states.sensor.zwave_motion_entryway_battery.state }}'
+      entity_id: sensor.motion_entryway_battery
+      value_template: '{{ states.sensor.motion_entryway_battery.state }}'
       above: 50
     action:
     - service: input_boolean.turn_off
       entity_id:
-        - input_boolean.zwave_motion_entryway_battery_low
+        - input_boolean.motion_entryway_battery_low
         
   - alias: "Battery Entryway Notify"
     trigger:
     - platform: state
-      entity_id: input_boolean.zwave_motion_entryway_battery_low
+      entity_id: input_boolean.motion_entryway_battery_low
       to: 'on'
     action:
     - service: notify.telegram
@@ -69,29 +69,29 @@
   - alias: "Battery Front Low"
     trigger:
     - platform: numeric_state
-      entity_id: sensor.zwave_motion_front_battery
-      value_template: '{{ states.sensor.zwave_motion_front_battery.state }}'
+      entity_id: sensor.motion_zhafrontporch_battery
+      value_template: '{{ states.sensor.motion_zhafrontporch_battery.state }}'
       below: 20
     action:
     - service: input_boolean.turn_on
       entity_id:
-        - input_boolean.zwave_motion_front_battery_low
+        - input_boolean.motion_zhafrontporch_battery_low
         
   - alias: "Battery Front Replaced"
     trigger:
     - platform: numeric_state
-      entity_id: sensor.zwave_motion_front_battery
-      value_template: '{{ states.sensor.zwave_motion_front_battery.state }}'
+      entity_id: sensor.motion_zhafrontporch_battery
+      value_template: '{{ states.sensor.motion_zhafrontporch_battery.state }}'
       above: 50
     action:
     - service: input_boolean.turn_off
       entity_id:
-        - input_boolean.zwave_motion_front_battery_low
+        - input_boolean.motion_zhafrontporch_battery_low
         
   - alias: "Battery Front Notify"
     trigger:
     - platform: state
-      entity_id: input_boolean.zwave_motion_front_battery_low
+      entity_id: input_boolean.motion_zhafrontporch_battery_low
       to: 'on'
     action:
     - service: notify.telegram

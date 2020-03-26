@@ -85,6 +85,7 @@
       - service: input_boolean.turn_off
         entity_id:
         - input_boolean.night_tv_mode
+        - input_boolean.night_mode
         
 ## Sunset
   - alias: "At Sunset"

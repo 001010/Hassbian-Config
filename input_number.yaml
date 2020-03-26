@@ -59,7 +59,14 @@
   stakes1_animation_speed:
     name: Front Yard Animation Speed
     mode: slider
-    initial: 150
+    initial: 120
     min: 1
     max: 150
-    step: 10
+    step: 1
+  masterbath_over_temp:
+    name: Master Bath Over Temp Setpoint
+    mode: slider
+    initial: 75
+    min: 65
+    max: 85
+    step: 1  

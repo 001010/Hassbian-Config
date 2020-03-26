@@ -1,0 +1,33 @@
+### Office Automations
+  - alias: "OfficeLight_ON"
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_office_motion
+      to: 'on'
+    condition:
+      condition: and
+      conditions:
+      - condition: state
+        entity_id: light.officedimmer_level
+        state: 'off'
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: switch.frontporchlight_switch
+          state: 'on'
+        - condition: numeric_state
+          entity_id: sensor.motion_front_luminance
+          below: 500
+    action:
+    - service: light.turn_on
+      entity_id: light.officedimmer_level
+  - alias: "OfficeLight_OFF"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.motion_office_motion
+        to: 'off'
+        for:
+          minutes: 20
+    action:
+    - service: light.turn_off
+      entity_id: light.officedimmer_level

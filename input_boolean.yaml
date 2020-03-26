@@ -9,6 +9,8 @@
     initial: off
   night_tv_mode:
     initial: off
+  night_mode:
+    initial: off
   sexy_mode:
     initial: off
   reset_nightstands:
@@ -28,8 +30,8 @@
 
   auto_bedroom_humidity:
     
-  zwave_motion_entryway_battery_low:
-  zwave_motion_front_battery_low:
+  motion_entryway_battery_low:
+  motion_zhafrontporch_battery_low:
   zwave_motion_upstairs_battery_low:
   zwave_watersensor_battery_low:
 

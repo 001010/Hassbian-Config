@@ -20,19 +20,19 @@
     - platform: state
       entity_id: sensor.motion_office_temperature
     - platform: state
-      entity_id: sensor.contact_zhacontact1_temperature
+      entity_id: sensor.contact_garageentry_temperature
     - platform: state
-      entity_id: sensor.contact_frontdoor_temperature
+      entity_id: sensor.motion_zhamotionsensor_temperature
     action:
       service: input_number.set_value
       data_template:
         entity_id: input_number.temperature_downstairs
         value: "{{ ((
-          float(states('sensor.motion_entryway_temperature'))+
           float(states('sensor.entryway_thermostat_temperature'))+
+          float(states('sensor.motion_entryway_temperature'))+
           float(states('sensor.motion_office_temperature'))+
-          float(states('sensor.contact_frontdoor_temperature'))+
-          float(states('sensor.contact_zhacontact1_temperature'))
+          float(states('sensor.contact_garageentry_temperature'))+
+          float(states('sensor.motion_zhamotionsensor_temperature'))
           )/5) | round(1) }}"
 
   - alias: temperature_upstairs
@@ -52,26 +52,29 @@
     - platform: state
       entity_id: input_number.temperature_house
     - platform: state
-      entity_id: sensor.temperature_upstairs
+      entity_id: input_number.temperature_upstairs
     - platform: state
-      entity_id: sensor.temperature_downstairs
+      entity_id: input_number.temperature_downstairs
     action:
     - service: input_number.set_value
       data_template:
         entity_id: input_number.temperature_house
-        value: "{{ ((float(states('input_number.temperature_upstairs'))+float(states('input_number.temperature_downstairs')))/2) | round(1) }}"
+        value: "{{ ((
+          float(states('input_number.temperature_upstairs'))+
+          float(states('input_number.temperature_downstairs'))
+          )/2) | round(1) }}"
 
   - alias: temperature_outside
     trigger:
     - platform: state
       entity_id: input_number.temperature_outside
     - platform: state
-      entity_id: sensor.motion_front_temperature
+      entity_id: sensor.motion_zhafrontporch_temperature
     action:
     - service: input_number.set_value
       data_template:
         entity_id: input_number.temperature_outside
-        value: "{{ ((float(states('sensor.motion_front_temperature'))+float(states('sensor.owm_temperature')))/2) | round(1) }}"
+        value: "{{ ((float(states('sensor.motion_zhafrontporch_temperature'))+float(states('sensor.owm_temperature')))/2) | round(1) }}"
 
   - alias: outside_warmer
     trigger:
@@ -99,35 +102,15 @@
       - input_boolean.outside_cooler
     - service: script.update_all_temp_sheet
     
-  # - alias: cool_down_house_on
-    # initial_state: off
-    # trigger:
-      # platform: state
-      # entity_id: input_boolean.outside_cooler
-      # to: 'on'
-    # action:
-    # - service: switch.turn_on
-      # entity_id:
-      # - switch.housefan_switch
-      
-  # - alias: cool_down_house_off
-    # trigger:
-      # platform: state
-      # entity_id: input_boolean.outside_warmer
-      # to: 'on'
-    # action:
-    # - service: switch.turn_off
-      # entity_id:
-      # - switch.housefan_switch
-
-  # - alias: "Climate Update"
-    # trigger:
-    # - platform: time
-      # minutes: 0
-      # seconds: 00
-    # - platform: sun
-      # event: sunset
-    # - platform: sun
-      # event: sunrise
-    # action:
-    # - service: script.update_all_temp_sheet
+  - alias: "Bathroom Over Temp"
+    trigger:
+      - platform: template
+        value_template: "{% if (states('input_number.masterbath_over_temp') < states('sensor.motion_zhamasterbath_temperature'))%}true{% endif %}"
+    condition:
+      - condition: state
+        entity_id: switch.bathroomheater_switch
+        state: 'on'
+    action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.bathroomheater_switch

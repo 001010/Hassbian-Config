@@ -1,0 +1,5 @@
+
+# Binary Sensors  
+  "binary_sensor.*_motion":
+    device_class: motion
+    icon: mdi:walk

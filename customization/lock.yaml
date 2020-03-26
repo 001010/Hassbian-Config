@@ -1,0 +1,9 @@
+## Emulated Hue items:
+## Must use 'emulated_hue_hidden: false' on each item then restart the HA service. Reloading core config and groups will not make this work.
+
+# Locks
+  lock.kwikset_garage_locked:
+    friendly_name: "Garage Entry Door"
+    emulated_hue_name: "Garage Entry Door"
+    emulated_hue_hidden: false
+    icon: mdi:lock

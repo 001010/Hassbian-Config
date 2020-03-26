@@ -96,19 +96,20 @@
     entities:
       light.osram_rgbw_frontporch:
         state: on
-        brightness: 255
-        transition: 1
+        # rgb_color: [255,0,0]
         color_name: 'Green'
+        brightness: 254
+        transition: 1
       light.osram_rgbw_frontgarage:
         state: on
-        brightness: 255
+        rgb_color: [255,0,191]
+        brightness: 123
         transition: 1
-        color_name: 'Purple'
       light.stakes_frontyard:
         state: on
-        brightness: 255
-        effect: 'solid'
-        color_name: 'orange'
+        rgb_color: [255,63,0]
+        effect: 'juggle'
+        brightness: 254
         
   - name: frontlights_thanksgiving
     entities:
@@ -116,16 +117,19 @@
         state: on
         brightness: 255
         transition: 1
-        color_name: 'Yellow'
+        color_name: 'Orange'
       light.osram_rgbw_frontgarage:
         state: on
+        #rgb_color: [255,140,0]
+        color_name: 'Gold'
         brightness: 255
         transition: 1
-        color_name: 'Orange'
       light.stakes_frontyard:
         state: on
+        rgb_color: [255,20,147]
+        # color_name: 'DeepPink'
+        effect: 'solid'
         brightness: 255
-        effect: 'fire'
 
   - name: frontlights_christmas
     entities:

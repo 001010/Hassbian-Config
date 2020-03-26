@@ -1,0 +1,11 @@
+### Office Automations
+  - alias: "Gym Heater AutoOFF"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.switch_gymheater_onoff
+        to: 'on'
+        for:
+          hours: 2
+    action:
+    - service: switch.turn_off
+      entity_id: switch.switch_gymheater

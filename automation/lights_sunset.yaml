@@ -23,20 +23,8 @@
       - platform: state
         entity_id: binary_sensor.motion_front_sensor
         to: 'on'
-    condition:
-      - condition: state
-        entity_id: switch.frontporchlight_switch
-        state: 'on'
-      - condition: template
-        value_template: '{{ states.input_select.holiday != "None" }}'
-    action:
-    - service: scene.turn_on
-      entity_id: scene.frontlights_normal_porch
-      
-  - alias: motion_front_on
-    trigger:
       - platform: state
-        entity_id: binary_sensor.motion_front_sensor
+        entity_id: binary_sensor.motion_zhafrontporch_motion
         to: 'on'
     condition:
       - condition: state
@@ -55,6 +43,9 @@
     trigger:
       - platform: state
         entity_id: binary_sensor.motion_front_sensor
+        to: 'on'
+      - platform: state
+        entity_id: binary_sensor.motion_zhafrontporch_motion
         to: 'on'
     condition:
       - condition: state
@@ -79,6 +70,9 @@
     trigger:
       - platform: state
         entity_id: binary_sensor.motion_front_sensor
+        to: 'off'
+      - platform: state
+        entity_id: binary_sensor.motion_zhafrontporch_motion
         to: 'off'
     condition:
       - condition: state

@@ -6,6 +6,7 @@ homeassistant:
   longitude: !secret longitude
   elevation: !secret elevation
   customize: !include_dir_merge_named customization
+  customize_glob: !include_dir_merge_named customize_glob
 
 recorder:
   purge_interval: 1
@@ -46,6 +47,7 @@ logbook:
 sun:
 # Enables Amazon Echo / Hue functions:
 emulated_hue:
+  type: alexa
   expose_by_default: false
     
 tradfri:
@@ -77,9 +79,12 @@ no_ip:
 
 # Google
 google:
-  client_id: 109191048287-9gn8tmn86c9ha2538s4opm8peut1teob.apps.googleusercontent.com
-  client_secret: ozWdinh5ng29vHxG4QHwUlgs
-  
+  client_id: !secret google_client_id
+  client_secret: !secret client_secret
+#google_assistant:
+
+
+
 # Sensor
 sensor: !include sensor.yaml
 
@@ -137,9 +142,9 @@ device_tracker:
   - platform: bluetooth_le_tracker
   - platform: bluetooth_tracker
     request_rssi: true
-  - platform: google_maps
-    username: !secret google-map-user
-    password: !secret google-map-pass
+  # - platform: google_maps
+    # username: !secret google-map-user
+    # password: !secret google-map-pass
 
 mqtt:
   broker: !secret no-ip_domain

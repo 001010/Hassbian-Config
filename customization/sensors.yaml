@@ -17,44 +17,6 @@
     friendly_name: "Upstairs Battery (AAA)"
     icon: mdi:battery
 
-  binary_sensor.motion_entryway_sensor:
-    friendly_name: "Entryway Motion"
-    icon: mdi:account-switch
-  sensor.motion_entryway_temperature:
-    friendly_name: "Entryway Temperature"
-    icon: mdi:temperature-fahrenheit
-  sensor.motion_entryway_luminance:
-    friendly_name: "Entryway Lux"
-    icon: mdi:brightness-6
-  sensor.motion_entryway_relative_humidity:
-    friendly_name: "Entryway Humidity"
-    icon: mdi:water-percent
-  sensor.zwave_motion_entryway_battery:
-    friendly_name: "Entryway Battery (AAA)"
-    icon: mdi:battery
-
-  binary_sensor.motion_front_sensor:
-    friendly_name: "Front Motion"
-    icon: mdi:account-switch
-  sensor.motion_front_temperature:
-    friendly_name: "Front Temperature"
-    icon: mdi:temperature-fahrenheit
-  sensor.motion_front_luminance:
-    friendly_name: "Front Lux"
-    icon: mdi:brightness-6
-  sensor.motion_front_relative_humidity:
-    friendly_name: "Front Humidity"
-    icon: mdi:water-percent
-  sensor.motion_front_ultraviolet:
-    friendly_name: "Front UV"
-    icon: mdi:radioactive
-  sensor.motion_front_burglar:
-    friendly_name: "Front Tamper"
-    icon: mdi:bullhorn
-  sensor.zwave_motion_front_battery:
-    friendly_name: "Front Battery (CR123)"
-    icon: mdi:battery
-
   input_number.bedroom_humidity:
     emulated_hue_name: "bedroom humidity"
     emulated_hue_hidden: false

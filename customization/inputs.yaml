@@ -7,6 +7,11 @@
     emulated_hue_name: "Night TV Mode"
     emulated_hue_hidden: false
     icon: mdi:weather-night
+  input_boolean.night_mode:
+    friendly_name: "Night Mode"
+    emulated_hue_name: "Night Mode"
+    emulated_hue_hidden: false
+    icon: mdi:weather-night
   input_boolean.stair_lights:
     emulated_hue_name: "Stair Lights"
     emulated_hue_hidden: false
